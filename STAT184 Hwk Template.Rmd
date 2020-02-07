@@ -27,7 +27,9 @@ library(tidyverse)
 ## Chapter 1 Exercises
 
 ### Problem 1.1
-
+```{r}
+print("hello")
+```
 
 ### Problem 1.2
 
