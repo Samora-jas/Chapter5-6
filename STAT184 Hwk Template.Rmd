@@ -1,14 +1,14 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 1 & 2"
-author: "Your Name"
+subtitle: "DataComputing Chapters 5 & 6"
+author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 1 Exercises: 1.1, 1.2, 1.3, 1.4, 1.5  
-- DC Chapter 2 Exercises: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.8, 2.9
+- DC Chapter 1 Exercises: 5.1, 5.2, 5.3 
+- DC Chapter 2 Exercises: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.8, 6.9, 6.10
 
 ## Front Matter
 
@@ -24,21 +24,65 @@ library(tidyverse)
 
 
 
-## Chapter 1 Exercises
+## Chapter 5 Exercises
 
-### Problem 1.1
+### Problem 5.1
 ```{r}
-print("hello")
+
+
+ggplot(data=CPS85,aes(x=sex,y=wage ,fill=married))+geom_bar(stat='identity',position='dodge', width=.9)+ facet_wrap(~union,ncol=3) 
 ```
 
-### Problem 1.2
+### Problem 5.2
 
-[and so forth...]
+```{r}
+  ggplot( data = NCHS, aes(x = bmi)) + geom_density(adjust = 0.36) + aes(colour = sex) + facet_wrap(~pregnant, ncol = 4) + labs(title = "") + theme(legend.position = "right") 
+```
+### Problem 5.3
 
+```{r}
+ggplot(data=CPS85,aes(x=exper,y=wage))+geom_point()+aes(colour=married)+scale_x_log10()+scale_y_log10()+facet_wrap(~sector,ncol=4) 
+```
 
-## Chapter 2 Exercises
+## Chapter 6 Exercises
 
-### Problem 2.1
+### Problem 6.1
+```{r}
 
-[and so forth...]
+```
+### Problem 6.2
+```{r}
 
+```
+### Problem 6.3
+```{r}
+
+```
+### Problem 6.4
+```{r}
+
+```
+### Problem 6.5
+```{r}
+
+```
+### Problem 6.6
+```{r}
+
+```
+### Problem 6.7
+```{r}
+
+```
+### Problem 6.8
+```{r}
+
+```
+### Problem 6.9
+```{r}
+
+```
+### Problem 6.10
+```{r}
+
+```
