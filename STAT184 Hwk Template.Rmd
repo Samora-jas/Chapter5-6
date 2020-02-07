@@ -48,39 +48,57 @@ ggplot(data=CPS85,aes(x=exper,y=wage))+geom_point()+aes(colour=married)+scale_x_
 
 ### Problem 6.1
 ```{r}
+# 1. The labels for the facets are: 1433B, 1433E, 1433G, 1433Z 
+# 2. No the frames are not the same in each facet. 
+# 3. They grow at different rates.
 
 ```
 ### Problem 6.2
 ```{r}
+# 1. The guides are: flux mapped by having either a filled dot or hollow dot, log enzyme concentration mapped by the tick marks from -3 to 5, target mapped by lines on the top of the graph, gene mapped by tick mark on the x axis, and molecule mapped by the different colored dot glyphs.
 
+#2.Color describes the types of molecules.
+
+#3. Enzyme concentration and molecule.
+
+#4. The 2 varibles are target and gene.
 ```
 ### Problem 6.3
 ```{r}
-
+#1. Double star; variable means it is negatively polar.  Bar; variable means it is  “center,”low“,”high“.
+#2 Varibles that define the frame are: protein and cell density.
+#3 Color is not an attribute.
+#4 High vs low cell density and protein type
 ```
 ### Problem 6.4
 ```{r}
-
+#1 The frame is the time schedule from 7:30am - 10:30am
+#2 The glyphs are the different types of bus routes in that time frame.
+#3 The shape/ style of the glyph is the duration of the bus route - how long the bus will be in route. Position of the glyph is related to the shape/style it describes what time of the day that particular bus will be in route.
+#4 The guides are the modes of transportation: bus, bike, car, etc
 ```
 ### Problem 6.5
 ```{r}
-
+# Democrats and Republicans define the frame.
 ```
 ### Problem 6.6
 ```{r}
-
+# The glyph and its graphical attributes are rectangle and color and text.
 ```
 ### Problem 6.7
 ```{r}
-
+# State sets the order for categorical varible for vertical variable
 ```
 ### Problem 6.8
 ```{r}
-
+# Vertical scale: Name of state, Vertical scale: color band, and Color: color band.
 ```
 ### Problem 6.9
 ```{r}
-
+Small <- 
+  NCHS %>% 
+  sample_n(size=5000)
+ggplot(data=Small,aes(x=bmi,y=weight))+geom_point()+aes(colour=smoker)
 ```
 ### Problem 6.10
 ```{r}
