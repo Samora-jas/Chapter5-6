@@ -27,36 +27,53 @@ library(tidyverse)
 
 ### Problem 10.1
 ```{r}
-
-
-
 ```
+Str() - summary function
+group_by() - data verb
+rank() - data verb
+mean() - reduction function
+filter()- data verb
+summary()- summary function
+summarize()- data verb
+glimpse()- summary function
 
 ### Problem 10.2
 
 ```{r}
- 
 ```
+1. mutate()
+2. arrange()
+3. transmute()
+4. transmute()
+5.
+
 ### Problem 10.3
 
 ```{r}
-
 ```
+1. nrow()
+2. names()
+3. view()
+4. read()
+5. 
 
 ### Problem 10.4
 ```{r}
-
 ```
+For Output Table A - arrange( asc(count))
+For Output Table B - 
+For Output Table C - name(Yadriel)
+For Output Table D - select(total)
+For Output Table E - select(name, count)
 ### Problem 10.5
 ```{r}
-
 ```
+
 ### Problem 10.6
 ```{r}
-
 ```
+
 ### Problem 10.7
 ```{r}
-
 ```
 

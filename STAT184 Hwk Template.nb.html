@@ -239,16 +239,100 @@ summary {
 <h2>Front Matter</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuXG4jIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudFxubGlicmFyeShtb3NhaWMpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcblxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r # clean up workspace environment rm(list = ls())</p>
-</div>
-<div id="all-packages-used-for-the-assignment" class="section level1">
-<h1>all packages used for the assignment</h1>
-<p>library(mosaic) library(tidyverse)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxuYGBgIn0= -->
+<pre class="r"><code># clean up workspace environment
+rm(list = ls())
+# all packages used for the assignment
+library(mosaic)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBkcGx5clxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZHBseXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgZmlsdGVyLCBsYWdcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsXG4gICAgc2V0ZXF1YWwsIHVuaW9uXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogbGF0dGljZVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ2Zvcm11bGFcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZ2dwbG90MlxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ3N0YW5jZVxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZ2dzdGFuY2XigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmdncGxvdDLigJk6XG5cbiAgICBnZW9tX2Vycm9yYmFyaCxcbiAgICBHZW9tRXJyb3JiYXJoXG5cblxuTmV3IHRvIGdnZm9ybXVsYT8gIFRyeSB0aGUgdHV0b3JpYWxzOiBcblx0bGVhcm5yOjpydW5fdHV0b3JpYWwoXCJpbnRyb2R1Y3Rpb25cIiwgcGFja2FnZSA9IFwiZ2dmb3JtdWxhXCIpXG5cdGxlYXJucjo6cnVuX3R1dG9yaWFsKFwicmVmaW5pbmdcIiwgcGFja2FnZSA9IFwiZ2dmb3JtdWxhXCIpXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IG1vc2FpY0RhdGFcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogTWF0cml4XG5UaGlzIHZlcnNpb24gb2YgU2hpbnkgaXMgZGVzaWduZWQgdG8gd29yayB3aXRoICdodG1sd2lkZ2V0cycgPj0gMS41LlxuICAgIFBsZWFzZSB1cGdyYWRlIHZpYSBpbnN0YWxsLnBhY2thZ2VzKCdodG1sd2lkZ2V0cycpLlxuXG5UaGUgJ21vc2FpYycgcGFja2FnZSBtYXNrcyBzZXZlcmFsIGZ1bmN0aW9ucyBmcm9tIGNvcmUgcGFja2FnZXMgaW4gb3JkZXIgdG8gYWRkIFxuYWRkaXRpb25hbCBmZWF0dXJlcy4gIFRoZSBvcmlnaW5hbCBiZWhhdmlvciBvZiB0aGVzZSBmdW5jdGlvbnMgc2hvdWxkIG5vdCBiZSBhZmZlY3RlZCBieSB0aGlzLlxuXG5Ob3RlOiBJZiB5b3UgdXNlIHRoZSBNYXRyaXggcGFja2FnZSwgYmUgc3VyZSB0byBsb2FkIGl0IEJFRk9SRSBsb2FkaW5nIG1vc2FpYy5cblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmG1vc2FpY+KAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOk1hdHJpeOKAmTpcblxuICAgIG1lYW5cblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpnZ3Bsb3Qy4oCZOlxuXG4gICAgc3RhdFxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6ZHBseXLigJk6XG5cbiAgICBjb3VudCwgZG8sIHRhbGx5XG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpzdGF0c+KAmTpcblxuICAgIGJpbm9tLnRlc3QsIGNvciwgY29yLnRlc3QsXG4gICAgY292LCBmaXZlbnVtLCBJUVIsIG1lZGlhbixcbiAgICBwcm9wLnRlc3QsIHF1YW50aWxlLCBzZCxcbiAgICB0LnRlc3QsIHZhclxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6YmFzZeKAmTpcblxuICAgIG1heCwgbWVhbiwgbWluLCBwcm9kLFxuICAgIHJhbmdlLCBzYW1wbGUsIHN1bVxuIn0= -->
+<pre><code>Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff,
+    setequal, union
+
+Loading required package: lattice
+Loading required package: ggformula
+Loading required package: ggplot2
+Loading required package: ggstance
+
+Attaching package: ‘ggstance’
+
+The following objects are masked from ‘package:ggplot2’:
+
+    geom_errorbarh,
+    GeomErrorbarh
+
+
+New to ggformula?  Try the tutorials: 
+    learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
+    learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
+Loading required package: mosaicData
+Loading required package: Matrix
+This version of Shiny is designed to work with 'htmlwidgets' &gt;= 1.5.
+    Please upgrade via install.packages('htmlwidgets').
+
+The 'mosaic' package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.
+
+Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
+
+Attaching package: ‘mosaic’
+
+The following object is masked from ‘package:Matrix’:
+
+    mean
+
+The following object is masked from ‘package:ggplot2’:
+
+    stat
+
+The following objects are masked from ‘package:dplyr’:
+
+    count, do, tally
+
+The following objects are masked from ‘package:stats’:
+
+    binom.test, cor, cor.test,
+    cov, fivenum, IQR, median,
+    prop.test, quantile, sd,
+    t.test, var
+
+The following objects are masked from ‘package:base’:
+
+    max, mean, min, prod,
+    range, sample, sum</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzMwbeKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFx1MDAxYlszOW1cblx1MDAxYlszMG1cdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtdGliYmxlIFx1MDAxYlszMG0gMi4xLjMgICAgIFx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG1wdXJyciAgXHUwMDFiWzMwbSAwLjMuMlxuXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzBtIDAuOC4zICAgICBcdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtc3RyaW5nclx1MDAxYlszMG0gMS40LjBcblx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG1yZWFkciAgXHUwMDFiWzMwbSAxLjMuMSAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzBtIDAuMy4wXHUwMDFiWzM5bVxuXHUwMDFiWzMwbeKUgOKUgCBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06Olx1MDAxYlszMm1jb3VudCgpXHUwMDFiWzMwbSAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06OmNvdW50KClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1wdXJyclx1MDAxYlszMG06Olx1MDAxYlszMm1jcm9zcygpXHUwMDFiWzMwbSAgICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtbW9zYWljXHUwMDFiWzMwbTo6Y3Jvc3MoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06Olx1MDAxYlszMm1kbygpXHUwMDFiWzMwbSAgICAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06OmRvKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG10aWR5clx1MDAxYlszMG06Olx1MDAxYlszMm1leHBhbmQoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtTWF0cml4XHUwMDFiWzMwbTo6ZXhwYW5kKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06Olx1MDAxYlszMm1maWx0ZXIoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpmaWx0ZXIoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bWdnc3RhbmNlXHUwMDFiWzMwbTo6XHUwMDFiWzMybWdlb21fZXJyb3JiYXJoKClcdTAwMWJbMzBtIG1hc2tzIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzMwbTo6Z2VvbV9lcnJvcmJhcmgoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWxhZygpXHUwMDFiWzMwbSAgICAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszMG06OmxhZygpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtbW9zYWljXHUwMDFiWzMwbTo6XHUwMDFiWzMybXN0YXQoKVx1MDAxYlszMG0gICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzBtOjpzdGF0KClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1tb3NhaWNcdTAwMWJbMzBtOjpcdTAwMWJbMzJtdGFsbHkoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjp0YWxseSgpXHUwMDFiWzM5bVxuIn0= -->
+<pre><code>[30m── [1mAttaching packages[22m ─────────────[39m
+[30m[32m✔[30m [34mtibble [30m 2.1.3     [32m✔[30m [34mpurrr  [30m 0.3.2
+[32m✔[30m [34mtidyr  [30m 0.8.3     [32m✔[30m [34mstringr[30m 1.4.0
+[32m✔[30m [34mreadr  [30m 1.3.1     [32m✔[30m [34mforcats[30m 0.3.0[39m
+[30m── [1mConflicts[22m ──────────────────────
+[31m✖[30m [34mmosaic[30m::[32mcount()[30m            masks [34mdplyr[30m::count()
+[31m✖[30m [34mpurrr[30m::[32mcross()[30m             masks [34mmosaic[30m::cross()
+[31m✖[30m [34mmosaic[30m::[32mdo()[30m               masks [34mdplyr[30m::do()
+[31m✖[30m [34mtidyr[30m::[32mexpand()[30m            masks [34mMatrix[30m::expand()
+[31m✖[30m [34mdplyr[30m::[32mfilter()[30m            masks [34mstats[30m::filter()
+[31m✖[30m [34mggstance[30m::[32mgeom_errorbarh()[30m masks [34mggplot2[30m::geom_errorbarh()
+[31m✖[30m [34mdplyr[30m::[32mlag()[30m               masks [34mstats[30m::lag()
+[31m✖[30m [34mmosaic[30m::[32mstat()[30m             masks [34mggplot2[30m::stat()
+[31m✖[30m [34mmosaic[30m::[32mtally()[30m            masks [34mdplyr[30m::tally()[39m</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
 <div id="chapter-10-exercises" class="section level2">
 <h2>Chapter 10 Exercises</h2>
 <div id="problem-10.1" class="section level3">
@@ -257,6 +341,7 @@ summary {
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Str() - summary function group_by() - data verb rank() - data verb mean() - reduction function filter()- data verb summary()- summary function summarize()- data verb glimpse()- summary function</p>
 </div>
 <div id="problem-10.2" class="section level3">
 <h3>Problem 10.2</h3>
@@ -264,6 +349,13 @@ summary {
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<ol style="list-style-type: decimal">
+<li>mutate()</li>
+<li>arrange()</li>
+<li>transmute()</li>
+<li>transmute()</li>
+<li></li>
+</ol>
 </div>
 <div id="problem-10.3" class="section level3">
 <h3>Problem 10.3</h3>
@@ -271,6 +363,13 @@ summary {
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<ol style="list-style-type: decimal">
+<li>nrow()</li>
+<li>names()</li>
+<li>view()</li>
+<li>read()</li>
+<li></li>
+</ol>
 </div>
 <div id="problem-10.4" class="section level3">
 <h3>Problem 10.4</h3>
@@ -278,9 +377,7 @@ summary {
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
-<div id="problem-10.5" class="section level3">
-<h3>Problem 10.5</h3>
+<p>For Output Table A - arrange( asc(count)) For Output Table B - For Output Table C - name(Yadriel) For Output Table D - select(total) For Output Table E - select(name, count) ### Problem 10.5</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
@@ -302,9 +399,8 @@ summary {
 <!-- rnb-text-end -->
 </div>
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDEwIgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKLSBEQyBDaGFwdGVyIDEwIEV4ZXJjaXNlcyAxMC4xIC0gMTAuNwoKIyMgRnJvbnQgTWF0dGVyCgpgYGB7cn0KIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnQKcm0obGlzdCA9IGxzKCkpCgojIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudApsaWJyYXJ5KG1vc2FpYykKbGlicmFyeSh0aWR5dmVyc2UpCgpgYGAKCgoKIyMgQ2hhcHRlciAxMCBFeGVyY2lzZXMKCiMjIyBQcm9ibGVtIDEwLjEKYGBge3J9CgoKCmBgYAoKIyMjIFByb2JsZW0gMTAuMgoKYGBge3J9CiAKYGBgCiMjIyBQcm9ibGVtIDEwLjMKCmBgYHtyfQoKYGBgCgojIyMgUHJvYmxlbSAxMC40CmBgYHtyfQoKYGBgCiMjIyBQcm9ibGVtIDEwLjUKYGBge3J9CgpgYGAKIyMjIFByb2JsZW0gMTAuNgpgYGB7cn0KCmBgYAojIyMgUHJvYmxlbSAxMC43CmBgYHtyfQoKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDEwIgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKLSBEQyBDaGFwdGVyIDEwIEV4ZXJjaXNlcyAxMC4xIC0gMTAuNwoKIyMgRnJvbnQgTWF0dGVyCgpgYGB7cn0KIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnQKcm0obGlzdCA9IGxzKCkpCgojIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudApsaWJyYXJ5KG1vc2FpYykKbGlicmFyeSh0aWR5dmVyc2UpCgpgYGAKCgoKIyMgQ2hhcHRlciAxMCBFeGVyY2lzZXMKCiMjIyBQcm9ibGVtIDEwLjEKYGBge3J9CmBgYApTdHIoKSAtIHN1bW1hcnkgZnVuY3Rpb24KZ3JvdXBfYnkoKSAtIGRhdGEgdmVyYgpyYW5rKCkgLSBkYXRhIHZlcmIKbWVhbigpIC0gcmVkdWN0aW9uIGZ1bmN0aW9uCmZpbHRlcigpLSBkYXRhIHZlcmIKc3VtbWFyeSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCnN1bW1hcml6ZSgpLSBkYXRhIHZlcmIKZ2xpbXBzZSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCgojIyMgUHJvYmxlbSAxMC4yCgpgYGB7cn0KYGBgCjEuIG11dGF0ZSgpCjIuIGFycmFuZ2UoKQozLiB0cmFuc211dGUoKQo0LiB0cmFuc211dGUoKQo1LgoKIyMjIFByb2JsZW0gMTAuMwoKYGBge3J9CmBgYAoxLiBucm93KCkKMi4gbmFtZXMoKQozLiB2aWV3KCkKNC4gcmVhZCgpCjUuIAoKIyMjIFByb2JsZW0gMTAuNApgYGB7cn0KYGBgCkZvciBPdXRwdXQgVGFibGUgQSAtIGFycmFuZ2UoIGFzYyhjb3VudCkpCkZvciBPdXRwdXQgVGFibGUgQiAtIApGb3IgT3V0cHV0IFRhYmxlIEMgLSBuYW1lKFlhZHJpZWwpCkZvciBPdXRwdXQgVGFibGUgRCAtIHNlbGVjdCh0b3RhbCkKRm9yIE91dHB1dCBUYWJsZSBFIC0gc2VsZWN0KG5hbWUsIGNvdW50KQojIyMgUHJvYmxlbSAxMC41CmBgYHtyfQpgYGAKCiMjIyBQcm9ibGVtIDEwLjYKYGBge3J9CmBgYAoKIyMjIFByb2JsZW0gMTAuNwpgYGB7cn0KYGBgCgo=</div>
 
 
 
