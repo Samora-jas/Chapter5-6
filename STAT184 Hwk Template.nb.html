@@ -239,97 +239,14 @@ summary {
 <h2>Front Matter</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KERhdGFDb21wdXRpbmcpXG5gYGAifQ== -->
 <pre class="r"><code># clean up workspace environment
 rm(list = ls())
 # all packages used for the assignment
-library(mosaic)</code></pre>
+library(mosaic)
+library(tidyverse)
+library(DataComputing)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBkcGx5clxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZHBseXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgZmlsdGVyLCBsYWdcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsXG4gICAgc2V0ZXF1YWwsIHVuaW9uXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogbGF0dGljZVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ2Zvcm11bGFcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZ2dwbG90MlxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ3N0YW5jZVxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZ2dzdGFuY2XigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmdncGxvdDLigJk6XG5cbiAgICBnZW9tX2Vycm9yYmFyaCxcbiAgICBHZW9tRXJyb3JiYXJoXG5cblxuTmV3IHRvIGdnZm9ybXVsYT8gIFRyeSB0aGUgdHV0b3JpYWxzOiBcblx0bGVhcm5yOjpydW5fdHV0b3JpYWwoXCJpbnRyb2R1Y3Rpb25cIiwgcGFja2FnZSA9IFwiZ2dmb3JtdWxhXCIpXG5cdGxlYXJucjo6cnVuX3R1dG9yaWFsKFwicmVmaW5pbmdcIiwgcGFja2FnZSA9IFwiZ2dmb3JtdWxhXCIpXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IG1vc2FpY0RhdGFcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogTWF0cml4XG5UaGlzIHZlcnNpb24gb2YgU2hpbnkgaXMgZGVzaWduZWQgdG8gd29yayB3aXRoICdodG1sd2lkZ2V0cycgPj0gMS41LlxuICAgIFBsZWFzZSB1cGdyYWRlIHZpYSBpbnN0YWxsLnBhY2thZ2VzKCdodG1sd2lkZ2V0cycpLlxuXG5UaGUgJ21vc2FpYycgcGFja2FnZSBtYXNrcyBzZXZlcmFsIGZ1bmN0aW9ucyBmcm9tIGNvcmUgcGFja2FnZXMgaW4gb3JkZXIgdG8gYWRkIFxuYWRkaXRpb25hbCBmZWF0dXJlcy4gIFRoZSBvcmlnaW5hbCBiZWhhdmlvciBvZiB0aGVzZSBmdW5jdGlvbnMgc2hvdWxkIG5vdCBiZSBhZmZlY3RlZCBieSB0aGlzLlxuXG5Ob3RlOiBJZiB5b3UgdXNlIHRoZSBNYXRyaXggcGFja2FnZSwgYmUgc3VyZSB0byBsb2FkIGl0IEJFRk9SRSBsb2FkaW5nIG1vc2FpYy5cblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmG1vc2FpY+KAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOk1hdHJpeOKAmTpcblxuICAgIG1lYW5cblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpnZ3Bsb3Qy4oCZOlxuXG4gICAgc3RhdFxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6ZHBseXLigJk6XG5cbiAgICBjb3VudCwgZG8sIHRhbGx5XG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpzdGF0c+KAmTpcblxuICAgIGJpbm9tLnRlc3QsIGNvciwgY29yLnRlc3QsXG4gICAgY292LCBmaXZlbnVtLCBJUVIsIG1lZGlhbixcbiAgICBwcm9wLnRlc3QsIHF1YW50aWxlLCBzZCxcbiAgICB0LnRlc3QsIHZhclxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6YmFzZeKAmTpcblxuICAgIG1heCwgbWVhbiwgbWluLCBwcm9kLFxuICAgIHJhbmdlLCBzYW1wbGUsIHN1bVxuIn0= -->
-<pre><code>Loading required package: dplyr
-
-Attaching package: ‘dplyr’
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff,
-    setequal, union
-
-Loading required package: lattice
-Loading required package: ggformula
-Loading required package: ggplot2
-Loading required package: ggstance
-
-Attaching package: ‘ggstance’
-
-The following objects are masked from ‘package:ggplot2’:
-
-    geom_errorbarh,
-    GeomErrorbarh
-
-
-New to ggformula?  Try the tutorials: 
-    learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-    learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
-Loading required package: mosaicData
-Loading required package: Matrix
-This version of Shiny is designed to work with 'htmlwidgets' &gt;= 1.5.
-    Please upgrade via install.packages('htmlwidgets').
-
-The 'mosaic' package masks several functions from core packages in order to add 
-additional features.  The original behavior of these functions should not be affected by this.
-
-Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
-
-Attaching package: ‘mosaic’
-
-The following object is masked from ‘package:Matrix’:
-
-    mean
-
-The following object is masked from ‘package:ggplot2’:
-
-    stat
-
-The following objects are masked from ‘package:dplyr’:
-
-    count, do, tally
-
-The following objects are masked from ‘package:stats’:
-
-    binom.test, cor, cor.test,
-    cov, fivenum, IQR, median,
-    prop.test, quantile, sd,
-    t.test, var
-
-The following objects are masked from ‘package:base’:
-
-    max, mean, min, prod,
-    range, sample, sum</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzMwbeKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFx1MDAxYlszOW1cblx1MDAxYlszMG1cdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtdGliYmxlIFx1MDAxYlszMG0gMi4xLjMgICAgIFx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG1wdXJyciAgXHUwMDFiWzMwbSAwLjMuMlxuXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzBtIDAuOC4zICAgICBcdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtc3RyaW5nclx1MDAxYlszMG0gMS40LjBcblx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG1yZWFkciAgXHUwMDFiWzMwbSAxLjMuMSAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzBtIDAuMy4wXHUwMDFiWzM5bVxuXHUwMDFiWzMwbeKUgOKUgCBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06Olx1MDAxYlszMm1jb3VudCgpXHUwMDFiWzMwbSAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06OmNvdW50KClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1wdXJyclx1MDAxYlszMG06Olx1MDAxYlszMm1jcm9zcygpXHUwMDFiWzMwbSAgICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtbW9zYWljXHUwMDFiWzMwbTo6Y3Jvc3MoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06Olx1MDAxYlszMm1kbygpXHUwMDFiWzMwbSAgICAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06OmRvKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG10aWR5clx1MDAxYlszMG06Olx1MDAxYlszMm1leHBhbmQoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtTWF0cml4XHUwMDFiWzMwbTo6ZXhwYW5kKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06Olx1MDAxYlszMm1maWx0ZXIoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpmaWx0ZXIoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bWdnc3RhbmNlXHUwMDFiWzMwbTo6XHUwMDFiWzMybWdlb21fZXJyb3JiYXJoKClcdTAwMWJbMzBtIG1hc2tzIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzMwbTo6Z2VvbV9lcnJvcmJhcmgoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWxhZygpXHUwMDFiWzMwbSAgICAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszMG06OmxhZygpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtbW9zYWljXHUwMDFiWzMwbTo6XHUwMDFiWzMybXN0YXQoKVx1MDAxYlszMG0gICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzBtOjpzdGF0KClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1tb3NhaWNcdTAwMWJbMzBtOjpcdTAwMWJbMzJtdGFsbHkoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjp0YWxseSgpXHUwMDFiWzM5bVxuIn0= -->
-<pre><code>[30m── [1mAttaching packages[22m ─────────────[39m
-[30m[32m✔[30m [34mtibble [30m 2.1.3     [32m✔[30m [34mpurrr  [30m 0.3.2
-[32m✔[30m [34mtidyr  [30m 0.8.3     [32m✔[30m [34mstringr[30m 1.4.0
-[32m✔[30m [34mreadr  [30m 1.3.1     [32m✔[30m [34mforcats[30m 0.3.0[39m
-[30m── [1mConflicts[22m ──────────────────────
-[31m✖[30m [34mmosaic[30m::[32mcount()[30m            masks [34mdplyr[30m::count()
-[31m✖[30m [34mpurrr[30m::[32mcross()[30m             masks [34mmosaic[30m::cross()
-[31m✖[30m [34mmosaic[30m::[32mdo()[30m               masks [34mdplyr[30m::do()
-[31m✖[30m [34mtidyr[30m::[32mexpand()[30m            masks [34mMatrix[30m::expand()
-[31m✖[30m [34mdplyr[30m::[32mfilter()[30m            masks [34mstats[30m::filter()
-[31m✖[30m [34mggstance[30m::[32mgeom_errorbarh()[30m masks [34mggplot2[30m::geom_errorbarh()
-[31m✖[30m [34mdplyr[30m::[32mlag()[30m               masks [34mstats[30m::lag()
-[31m✖[30m [34mmosaic[30m::[32mstat()[30m             masks [34mggplot2[30m::stat()
-[31m✖[30m [34mmosaic[30m::[32mtally()[30m            masks [34mdplyr[30m::tally()[39m</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -352,9 +269,8 @@ The following objects are masked from ‘package:base’:
 <ol style="list-style-type: decimal">
 <li>mutate()</li>
 <li>arrange()</li>
-<li>transmute()</li>
-<li>transmute()</li>
-<li></li>
+<li>select()</li>
+<li>filter() 5.select() and filter()</li>
 </ol>
 </div>
 <div id="problem-10.3" class="section level3">
@@ -366,9 +282,9 @@ The following objects are masked from ‘package:base’:
 <ol style="list-style-type: decimal">
 <li>nrow()</li>
 <li>names()</li>
-<li>view()</li>
-<li>read()</li>
-<li></li>
+<li>help()</li>
+<li>library(package)</li>
+<li>group_by()</li>
 </ol>
 </div>
 <div id="problem-10.4" class="section level3">
@@ -377,30 +293,134 @@ The following objects are masked from ‘package:base’:
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>For Output Table A - arrange( asc(count)) For Output Table B - For Output Table C - name(Yadriel) For Output Table D - select(total) For Output Table E - select(name, count) ### Problem 10.5</p>
+<p>For Output Table A - arrange( asc(count)) For Output Table B - filter(sex = F) For Output Table C - filter(sex = M) For Output Table D - summarize(total = n()) For Output Table E - select(name), summarize( count = n())</p>
+</div>
+<div id="problem-10.5" class="section level3">
+<h3>Problem 10.5</h3>
+<ol style="list-style-type: decimal">
+<li>First use filter function to show cases with first and seconf, then use the n() to count the cases who picked the same candidate for the first and second</li>
+</ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTWlubmVhcG9saXMyMDEzICU+JVxuICBmaWx0ZXIoRmlyc3Q9PVNlY29uZCklPiVcbiAgc3VtbWFyaXNlKG4oKSlcbmBgYCJ9 -->
+<pre class="r"><code>Minneapolis2013 %&gt;%
+  filter(First==Second)%&gt;%
+  summarise(n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MSwibnJvdyI6MX0sInJkZiI6IlVrUllNZ3BZQ2dBQUFBSUFBd1FCQUFJREFBQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFFQUFBQU5BQUFBQVFBQUIzWUFBQVFDQUFBQUFRQUVBQWtBQUFBRmJtRnRaWE1BQUFBUUFBQUFBUUFFQUFrQUFBQURiaWdwQUFBRUFnQUFBQUVBQkFBSkFBQUFDWEp2ZHk1dVlXMWxjd0FBQUEwQUFBQUJBQUFBQVFBQUJBSUFBQUFCQUFRQUNRQUFBQVZqYkdGemN3QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUEvZ0FBQkFJQUFBQUJBQVFBQ1FBQUFBZHZjSFJwYjI1ekFBQUNFd0FBQUFVQUFBQVFBQUFBQVFBRUFBa0FBQUFCY2dBQUFCQUFBQUFCQUFRQUNRQUFBQTkxYm01aGJXVmtMV05vZFc1ckxUTUFBQUFLQUFBQUFRQUFBQUFBQUFBTkFBQUFBUUFBQUFFQUFBQU5BQUFBQVFBQUFBRUFBQVFDQUFBQy93QUFBQkFBQUFBRkFBUUFDUUFBQUFabGJtZHBibVVBQkFBSkFBQUFCV3hoWW1Wc0FBUUFDUUFBQUE1eWIzZHVZVzFsY3k1d2NtbHVkQUFFQUFrQUFBQUtjbTkzY3k1MGIzUmhiQUFFQUFrQUFBQUtZMjlzY3k1MGIzUmhiQUFBQVA0QUFBRCsifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["n()"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"1910"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li>Use the filter function to make sure first and second are the same. After that we use group_by() with first and second to find out how many of each pair. The summarise(total=n()) will find the number of each pair, arrange will order by descreasing order, head(4) will include the undervote.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTWlubmVhcG9saXMyMDEzJT4lXG4gIGdyb3VwX2J5KEZpcnN0LCBTZWNvbmQpJT4lXG4gIGZpbHRlcihGaXJzdD09U2Vjb25kKSU+JVxuICBzdW1tYXJpc2UodG90YWw9bigpKSU+JVxuICBhcnJhbmdlKGRlc2ModG90YWwpKSU+JVxuICBoZWFkKDQpXG5gYGAifQ== -->
+<pre class="r"><code>Minneapolis2013%&gt;%
+  group_by(First, Second)%&gt;%
+  filter(First==Second)%&gt;%
+  summarise(total=n())%&gt;%
+  arrange(desc(total))%&gt;%
+  head(4)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5jb2wiOjMsIm5yb3ciOjR9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBTUFBQUFRQUFBQUJBQUVBQWtBQUFBSmRXNWtaWEoyYjNSbEFBUUFDUUFBQUF0TlFWSkxJRUZPUkZKRlZ3QUVBQWtBQUFBTVFrVlVVMWtnU0U5RVIwVlRBQVFBQ1FBQUFBdEVUMDRnVTBGTlZVVk1Vd0FBQUJBQUFBQUVBQVFBQ1FBQUFBbDFibVJsY25admRHVUFCQUFKQUFBQUMwMUJVa3NnUVU1RVVrVlhBQVFBQ1FBQUFBeENSVlJUV1NCSVQwUkhSVk1BQkFBSkFBQUFDMFJQVGlCVFFVMVZSVXhUQUFBQURRQUFBQVFBQUFLdUFBQUE0d0FBQU40QUFBQ1ZBQUFFQWdBQUFBRUFCQUFKQUFBQUJXTnNZWE56QUFBQUVBQUFBQUVBQkFBSkFBQUFDbVJoZEdFdVpuSmhiV1VBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBS0FBQUFBLy8vLy9BQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQURBQVFBQ1FBQUFBVkdhWEp6ZEFBRUFBa0FBQUFHVTJWamIyNWtBQVFBQ1FBQUFBVjBiM1JoYkFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkwMEFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFFQUFBQURRQUFBQUVBQUFBREFBQUVBZ0FBQlA4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["First"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Second"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"undervote","2":"undervote","3":"686"},{"1":"MARK ANDREW","2":"MARK ANDREW","3":"227"},{"1":"BETSY HODGES","2":"BETSY HODGES","3":"222"},{"1":"DON SAMUELS","2":"DON SAMUELS","3":"149"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>Use group by to group the first and Second. The filter function, then use summarise to find the number of distinct pairs. The arrange function will then arrange the results in decreasing total. Head displays the top 3 seconf and first choices.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTWlubmVhcG9saXMyMDEzJT4lXG4gIGdyb3VwX2J5KEZpcnN0LCBTZWNvbmQpJT4lXG4gIGZpbHRlcihGaXJzdD09XCJPTEUgU0FWSU9SXCIpICU+JVxuICBzdW1tYXJpc2UodG90YWw9bigpKSAlPiVcbiAgYXJyYW5nZShkZXNjKHRvdGFsKSkgJT4lXG4gIGhlYWQoNClcbmBgYCJ9 -->
+<pre class="r"><code>Minneapolis2013%&gt;%
+  group_by(First, Second)%&gt;%
+  filter(First==&quot;OLE SAVIOR&quot;) %&gt;%
+  summarise(total=n()) %&gt;%
+  arrange(desc(total)) %&gt;%
+  head(4)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5jb2wiOjMsIm5yb3ciOjR9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBTUFBQUFRQUFBQUJBQUVBQWtBQUFBS1QweEZJRk5CVmtsUFVnQUVBQWtBQUFBS1QweEZJRk5CVmtsUFVnQUVBQWtBQUFBS1QweEZJRk5CVmtsUFVnQUVBQWtBQUFBS1QweEZJRk5CVmtsUFVnQUFBQkFBQUFBRUFBUUFDUUFBQUFsMWJtUmxjblp2ZEdVQUJBQUpBQUFBQ2tOQlRTQlhTVTVVVDA0QUJBQUpBQUFBRzBOSVVrbFRWRTlRU0VWU0lGSlBRa2xPSUZwSlRVMUZVazFCVGdBRUFBa0FBQUFLVDB4RklGTkJWa2xQVWdBQUFBMEFBQUFFQUFBQXlnQUFBRThBQUFBdEFBQUFMQUFBQkFJQUFBQUJBQVFBQ1FBQUFBVmpiR0Z6Y3dBQUFCQUFBQUFCQUFRQUNRQUFBQXBrWVhSaExtWnlZVzFsQUFBRUFnQUFBQUVBQkFBSkFBQUFDWEp2ZHk1dVlXMWxjd0FBQUEwQUFBQUNnQUFBQVAvLy8vd0FBQVFDQUFBQUFRQUVBQWtBQUFBRmJtRnRaWE1BQUFBUUFBQUFBd0FFQUFrQUFBQUZSbWx5YzNRQUJBQUpBQUFBQmxObFkyOXVaQUFFQUFrQUFBQUZkRzkwWVd3QUFBRCtBQUFFQWdBQUFBRUFCQUFKQUFBQUIyOXdkR2x2Ym5NQUFBSVRBQUFBQlFBQUFCQUFBQUFCQUFRQUNRQUFBQUZ5QUFBQUVBQUFBQUVBQkFBSkFBQUFEM1Z1Ym1GdFpXUXRZMmgxYm1zdE5RQUFBQW9BQUFBQkFBQUFBQUFBQUEwQUFBQUJBQUFBQkFBQUFBMEFBQUFCQUFBQUF3QUFCQUlBQUFUL0FBQUFFQUFBQUFVQUJBQUpBQUFBQm1WdVoybHVaUUFFQUFrQUFBQUZiR0ZpWld3QUJBQUpBQUFBRG5KdmQyNWhiV1Z6TG5CeWFXNTBBQVFBQ1FBQUFBcHliM2R6TG5SdmRHRnNBQVFBQ1FBQUFBcGpiMnh6TG5SdmRHRnNBQUFBL2dBQUFQND0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["First"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Second"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"OLE SAVIOR","2":"undervote","3":"202"},{"1":"OLE SAVIOR","2":"CAM WINTON","3":"79"},{"1":"OLE SAVIOR","2":"CHRISTOPHER ROBIN ZIMMERMAN","3":"45"},{"1":"OLE SAVIOR","2":"OLE SAVIOR","3":"44"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="problem-10.6" class="section level3">
 <h3>Problem 10.6</h3>
+<ol style="list-style-type: decimal">
+<li></li>
+</ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlhbW9uZHMgJT4lIGdyb3VwX2J5KGNvbG9yKSAlPiUgc3VtbWFyaXNlKGF2ZyA9IG1lYW4oY2FyYXQpKSAlPiUgYXJyYW5nZShkZXNjKGF2ZykpICU+JSBoZWFkKDEpXG5gYGAifQ== -->
+<pre class="r"><code>diamonds %&gt;% group_by(color) %&gt;% summarise(avg = mean(carat)) %&gt;% arrange(desc(avg)) %&gt;% head(1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MX0sInJkZiI6IlVrUllNZ3BZQ2dBQUFBSUFBd1FCQUFJREFBQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBTU5BQUFBQVFBQUFBY0FBQVFDQUFBQUFRQUVBQWtBQUFBR2JHVjJaV3h6QUFBQUVBQUFBQWNBQkFBSkFBQUFBVVFBQkFBSkFBQUFBVVVBQkFBSkFBQUFBVVlBQkFBSkFBQUFBVWNBQkFBSkFBQUFBVWdBQkFBSkFBQUFBVWtBQkFBSkFBQUFBVW9BQUFRQ0FBQUFBUUFFQUFrQUFBQUZZMnhoYzNNQUFBQVFBQUFBQWdBRUFBa0FBQUFIYjNKa1pYSmxaQUFFQUFrQUFBQUdabUZqZEc5eUFBQUEvZ0FBQUE0QUFBQUJQL0tZSExUK2d4c0FBQVFDQUFBRC93QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUVBZ0FBQUFFQUJBQUpBQUFBQ1hKdmR5NXVZVzFsY3dBQUFBMEFBQUFDZ0FBQUFQLy8vLzhBQUFRQ0FBQUFBUUFFQUFrQUFBQUZibUZ0WlhNQUFBQVFBQUFBQWdBRUFBa0FBQUFGWTI5c2IzSUFCQUFKQUFBQUEyRjJad0FBQVA0QUFBUUNBQUFBQVFBRUFBa0FBQUFIYjNCMGFXOXVjd0FBQWhNQUFBQUZBQUFBRUFBQUFBRUFCQUFKQUFBQUFYSUFBQUFRQUFBQUFRQUVBQWtBQUFBUGRXNXVZVzFsWkMxamFIVnVheTB4QUFBQUNnQUFBQUVBQUFBQUFBQUFEUUFBQUFFQUFBQUJBQUFBRFFBQUFBRUFBQUFDQUFBRUFnQUFCZjhBQUFBUUFBQUFCUUFFQUFrQUFBQUdaVzVuYVc1bEFBUUFDUUFBQUFWc1lXSmxiQUFFQUFrQUFBQU9jbTkzYm1GdFpYTXVjSEpwYm5RQUJBQUpBQUFBQ25KdmQzTXVkRzkwWVd3QUJBQUpBQUFBQ21OdmJITXVkRzkwWVd3QUFBRCtBQUFBL2c9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["color"],"name":[1],"type":["ord"],"align":["right"]},{"label":["avg"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"J","2":"1.162137"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
-<div id="problem-10.7" class="section level3">
-<h3>Problem 10.7</h3>
+<p>Verb1 = group_by args1 = color Verb2 = summarise args2 = avg = mean(carat) args = avg 2.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlhbW9uZHMgJT4lIGdyb3VwX2J5KGNvbG9yKSAlPiUgc3VtbWFyaXNlKFRhYmxlcyA9IG1lYW4odGFibGUvY2FyYXQpKSAlPiUgYXJyYW5nZShkZXNjKFRhYmxlcykpICU+JSBoZWFkKDEpXG5gYGAifQ== -->
+<pre class="r"><code>diamonds %&gt;% group_by(color) %&gt;% summarise(Tables = mean(table/carat)) %&gt;% arrange(desc(Tables)) %&gt;% head(1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MX0sInJkZiI6IlVrUllNZ3BZQ2dBQUFBSUFBd1FCQUFJREFBQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBTU5BQUFBQVFBQUFBSUFBQVFDQUFBQUFRQUVBQWtBQUFBR2JHVjJaV3h6QUFBQUVBQUFBQWNBQkFBSkFBQUFBVVFBQkFBSkFBQUFBVVVBQkFBSkFBQUFBVVlBQkFBSkFBQUFBVWNBQkFBSkFBQUFBVWdBQkFBSkFBQUFBVWtBQkFBSkFBQUFBVW9BQUFRQ0FBQUFBUUFFQUFrQUFBQUZZMnhoYzNNQUFBQVFBQUFBQWdBRUFBa0FBQUFIYjNKa1pYSmxaQUFFQUFrQUFBQUdabUZqZEc5eUFBQUEvZ0FBQUE0QUFBQUJRRnlFMEw5bmwyWUFBQVFDQUFBRC93QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUVBZ0FBQUFFQUJBQUpBQUFBQ1hKdmR5NXVZVzFsY3dBQUFBMEFBQUFDZ0FBQUFQLy8vLzhBQUFRQ0FBQUFBUUFFQUFrQUFBQUZibUZ0WlhNQUFBQVFBQUFBQWdBRUFBa0FBQUFGWTI5c2IzSUFCQUFKQUFBQUJsUmhZbXhsY3dBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkweUFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFCQUFBQURRQUFBQUVBQUFBQ0FBQUVBZ0FBQmY4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["color"],"name":[1],"type":["ord"],"align":["right"]},{"label":["Tables"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"E","2":"114.0752"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>verb1 = group_by args1 = color verb2 = summarise args2 = tables= mean(table/carat) args = tables ### Problem 10.7</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTWlub3IgPC0gTWlubmVhcG9saXMyMDEzJT4lXG4gIGdyb3VwX2J5KEZpcnN0KSU+JVxuICBzdW1tYXJpc2UodG90YWw9bigpKSU+JVxuICBtdXRhdGUoRmlyc3QgPSBpZmVsc2UodG90YWwgPCA1MDAwLCBcIm1pbm9yXCIsIEZpcnN0KSlcbk1pbm9yJT4lXG4gIGdyb3VwX2J5KEZpcnN0KSU+JVxuICBzdW1tYXJpc2Uoc3VtKHRvdGFsKSlcbmBgYCJ9 -->
+<pre class="r"><code>Minor &lt;- Minneapolis2013%&gt;%
+  group_by(First)%&gt;%
+  summarise(total=n())%&gt;%
+  mutate(First = ifelse(total &lt; 5000, &quot;minor&quot;, First))
+Minor%&gt;%
+  group_by(First)%&gt;%
+  summarise(sum(total))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NX0sInJkZiI6IlVrUllNZ3BZQ2dBQUFBSUFBd1FCQUFJREFBQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBQVFBQUFBQlFBRUFBa0FBQUFNUWtWVVUxa2dTRTlFUjBWVEFBUUFDUUFBQUFwRFFVMGdWMGxPVkU5T0FBUUFDUUFBQUF0RVQwNGdVMEZOVlVWTVV3QUVBQWtBQUFBTFRVRlNTeUJCVGtSU1JWY0FCQUFKQUFBQUJXMXBibTl5QUFBQURRQUFBQVVBQUhFSEFBQWRWd0FBSUk4QUFFeUFBQUE5ZUFBQUJBSUFBQUFCQUFRQUNRQUFBQVZ1WVcxbGN3QUFBQkFBQUFBQ0FBUUFDUUFBQUFWR2FYSnpkQUFFQUFrQUFBQUtjM1Z0S0hSdmRHRnNLUUFBQkFJQUFBQUJBQVFBQ1FBQUFBVmpiR0Z6Y3dBQUFCQUFBQUFCQUFRQUNRQUFBQXBrWVhSaExtWnlZVzFsQUFBRUFnQUFBQUVBQkFBSkFBQUFDWEp2ZHk1dVlXMWxjd0FBQUEwQUFBQUNnQUFBQVAvLy8vc0FBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCMjl3ZEdsdmJuTUFBQUlUQUFBQUJRQUFBQkFBQUFBQkFBUUFDUUFBQUFGeUFBQUFFQUFBQUFFQUJBQUpBQUFBRDNWdWJtRnRaV1F0WTJoMWJtc3RNd0FBQUFvQUFBQUJBQUFBQUFBQUFBMEFBQUFCQUFBQUJRQUFBQTBBQUFBQkFBQUFBZ0FBQkFJQUFBTC9BQUFBRUFBQUFBVUFCQUFKQUFBQUJtVnVaMmx1WlFBRUFBa0FBQUFGYkdGaVpXd0FCQUFKQUFBQURuSnZkMjVoYldWekxuQnlhVzUwQUFRQUNRQUFBQXB5YjNkekxuUnZkR0ZzQUFRQUNRQUFBQXBqYjJ4ekxuUnZkR0ZzQUFBQS9nQUFBUDQ9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["First"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sum(total)"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"BETSY HODGES","2":"28935"},{"1":"CAM WINTON","2":"7511"},{"1":"DON SAMUELS","2":"8335"},{"1":"MARK ANDREW","2":"19584"},{"1":"minor","2":"15736"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDEwIgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKLSBEQyBDaGFwdGVyIDEwIEV4ZXJjaXNlcyAxMC4xIC0gMTAuNwoKIyMgRnJvbnQgTWF0dGVyCgpgYGB7cn0KIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnQKcm0obGlzdCA9IGxzKCkpCgojIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudApsaWJyYXJ5KG1vc2FpYykKbGlicmFyeSh0aWR5dmVyc2UpCgpgYGAKCgoKIyMgQ2hhcHRlciAxMCBFeGVyY2lzZXMKCiMjIyBQcm9ibGVtIDEwLjEKYGBge3J9CmBgYApTdHIoKSAtIHN1bW1hcnkgZnVuY3Rpb24KZ3JvdXBfYnkoKSAtIGRhdGEgdmVyYgpyYW5rKCkgLSBkYXRhIHZlcmIKbWVhbigpIC0gcmVkdWN0aW9uIGZ1bmN0aW9uCmZpbHRlcigpLSBkYXRhIHZlcmIKc3VtbWFyeSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCnN1bW1hcml6ZSgpLSBkYXRhIHZlcmIKZ2xpbXBzZSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCgojIyMgUHJvYmxlbSAxMC4yCgpgYGB7cn0KYGBgCjEuIG11dGF0ZSgpCjIuIGFycmFuZ2UoKQozLiB0cmFuc211dGUoKQo0LiB0cmFuc211dGUoKQo1LgoKIyMjIFByb2JsZW0gMTAuMwoKYGBge3J9CmBgYAoxLiBucm93KCkKMi4gbmFtZXMoKQozLiB2aWV3KCkKNC4gcmVhZCgpCjUuIAoKIyMjIFByb2JsZW0gMTAuNApgYGB7cn0KYGBgCkZvciBPdXRwdXQgVGFibGUgQSAtIGFycmFuZ2UoIGFzYyhjb3VudCkpCkZvciBPdXRwdXQgVGFibGUgQiAtIApGb3IgT3V0cHV0IFRhYmxlIEMgLSBuYW1lKFlhZHJpZWwpCkZvciBPdXRwdXQgVGFibGUgRCAtIHNlbGVjdCh0b3RhbCkKRm9yIE91dHB1dCBUYWJsZSBFIC0gc2VsZWN0KG5hbWUsIGNvdW50KQojIyMgUHJvYmxlbSAxMC41CmBgYHtyfQpgYGAKCiMjIyBQcm9ibGVtIDEwLjYKYGBge3J9CmBgYAoKIyMjIFByb2JsZW0gMTAuNwpgYGB7cn0KYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDEwIgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKLSBEQyBDaGFwdGVyIDEwIEV4ZXJjaXNlcyAxMC4xIC0gMTAuNwoKIyMgRnJvbnQgTWF0dGVyCgpgYGB7cn0KIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnQKcm0obGlzdCA9IGxzKCkpCgojIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudApsaWJyYXJ5KG1vc2FpYykKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoRGF0YUNvbXB1dGluZykKCgpgYGAKCgoKIyMgQ2hhcHRlciAxMCBFeGVyY2lzZXMKCiMjIyBQcm9ibGVtIDEwLjEKYGBge3J9CmBgYApTdHIoKSAtIHN1bW1hcnkgZnVuY3Rpb24KZ3JvdXBfYnkoKSAtIGRhdGEgdmVyYgpyYW5rKCkgLSBkYXRhIHZlcmIKbWVhbigpIC0gcmVkdWN0aW9uIGZ1bmN0aW9uCmZpbHRlcigpLSBkYXRhIHZlcmIKc3VtbWFyeSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCnN1bW1hcml6ZSgpLSBkYXRhIHZlcmIKZ2xpbXBzZSgpLSBzdW1tYXJ5IGZ1bmN0aW9uCgojIyMgUHJvYmxlbSAxMC4yCgpgYGB7cn0KYGBgCjEuIG11dGF0ZSgpCjIuIGFycmFuZ2UoKQozLiBzZWxlY3QoKQo0LiBmaWx0ZXIoKQo1LnNlbGVjdCgpIGFuZCBmaWx0ZXIoKQoKIyMjIFByb2JsZW0gMTAuMwoKYGBge3J9CmBgYAoxLiBucm93KCkKMi4gbmFtZXMoKQozLiBoZWxwKCkKNC4gbGlicmFyeShwYWNrYWdlKQo1LiBncm91cF9ieSgpCgojIyMgUHJvYmxlbSAxMC40CmBgYHtyfQpgYGAKRm9yIE91dHB1dCBUYWJsZSBBIC0gYXJyYW5nZSggYXNjKGNvdW50KSkKRm9yIE91dHB1dCBUYWJsZSBCIC0gZmlsdGVyKHNleCA9IEYpCkZvciBPdXRwdXQgVGFibGUgQyAtIGZpbHRlcihzZXggPSBNKQpGb3IgT3V0cHV0IFRhYmxlIEQgLSBzdW1tYXJpemUodG90YWwgPSBuKCkpCkZvciBPdXRwdXQgVGFibGUgRSAtIHNlbGVjdChuYW1lKSwgc3VtbWFyaXplKCBjb3VudCA9IG4oKSkKCiMjIyBQcm9ibGVtIDEwLjUKMS4gRmlyc3QgdXNlIGZpbHRlciBmdW5jdGlvbiB0byBzaG93IGNhc2VzIHdpdGggZmlyc3QgYW5kIHNlY29uZiwgdGhlbiB1c2UgdGhlIG4oKSB0byBjb3VudCB0aGUgY2FzZXMgd2hvIHBpY2tlZCB0aGUgc2FtZSBjYW5kaWRhdGUgZm9yIHRoZSBmaXJzdCBhbmQgc2Vjb25kIAoKYGBge3J9Ck1pbm5lYXBvbGlzMjAxMyAlPiUKICBmaWx0ZXIoRmlyc3Q9PVNlY29uZCklPiUKICBzdW1tYXJpc2UobigpKQpgYGAKCjIuIFVzZSB0aGUgZmlsdGVyIGZ1bmN0aW9uIHRvIG1ha2Ugc3VyZSBmaXJzdCBhbmQgc2Vjb25kIGFyZSB0aGUgc2FtZS4gQWZ0ZXIgdGhhdCB3ZSB1c2UgZ3JvdXBfYnkoKSB3aXRoIGZpcnN0IGFuZCBzZWNvbmQgdG8gZmluZCBvdXQgaG93IG1hbnkgb2YgZWFjaCBwYWlyLiBUaGUgc3VtbWFyaXNlKHRvdGFsPW4oKSkgd2lsbCBmaW5kIHRoZSBudW1iZXIgb2YgZWFjaCBwYWlyLCBhcnJhbmdlIHdpbGwgb3JkZXIgYnkgZGVzY3JlYXNpbmcgb3JkZXIsIGhlYWQoNCkgd2lsbCBpbmNsdWRlIHRoZSB1bmRlcnZvdGUuCmBgYHtyfQpNaW5uZWFwb2xpczIwMTMlPiUKICBncm91cF9ieShGaXJzdCwgU2Vjb25kKSU+JQogIGZpbHRlcihGaXJzdD09U2Vjb25kKSU+JQogIHN1bW1hcmlzZSh0b3RhbD1uKCkpJT4lCiAgYXJyYW5nZShkZXNjKHRvdGFsKSklPiUKICBoZWFkKDQpCmBgYAozLiBVc2UgZ3JvdXAgYnkgdG8gZ3JvdXAgdGhlIGZpcnN0IGFuZCBTZWNvbmQuIFRoZSBmaWx0ZXIgZnVuY3Rpb24sIHRoZW4gdXNlIHN1bW1hcmlzZSB0byBmaW5kIHRoZSBudW1iZXIgb2YgZGlzdGluY3QgcGFpcnMuIFRoZSBhcnJhbmdlIGZ1bmN0aW9uIHdpbGwgdGhlbiBhcnJhbmdlIHRoZSByZXN1bHRzIGluIGRlY3JlYXNpbmcgdG90YWwuIEhlYWQgZGlzcGxheXMgdGhlIHRvcCAzIHNlY29uZiBhbmQgZmlyc3QgY2hvaWNlcy4KYGBge3J9Ck1pbm5lYXBvbGlzMjAxMyU+JQogIGdyb3VwX2J5KEZpcnN0LCBTZWNvbmQpJT4lCiAgZmlsdGVyKEZpcnN0PT0iT0xFIFNBVklPUiIpICU+JQogIHN1bW1hcmlzZSh0b3RhbD1uKCkpICU+JQogIGFycmFuZ2UoZGVzYyh0b3RhbCkpICU+JQogIGhlYWQoNCkKYGBgCgojIyMgUHJvYmxlbSAxMC42CjEuCmBgYHtyfQpkaWFtb25kcyAlPiUgZ3JvdXBfYnkoY29sb3IpICU+JSBzdW1tYXJpc2UoYXZnID0gbWVhbihjYXJhdCkpICU+JSBhcnJhbmdlKGRlc2MoYXZnKSkgJT4lIGhlYWQoMSkKYGBgClZlcmIxID0gZ3JvdXBfYnkgYXJnczEgPSBjb2xvcgpWZXJiMiA9IHN1bW1hcmlzZSAgYXJnczIgPSBhdmcgPSBtZWFuKGNhcmF0KQphcmdzID0gYXZnCjIuCmBgYHtyfQpkaWFtb25kcyAlPiUgZ3JvdXBfYnkoY29sb3IpICU+JSBzdW1tYXJpc2UoVGFibGVzID0gbWVhbih0YWJsZS9jYXJhdCkpICU+JSBhcnJhbmdlKGRlc2MoVGFibGVzKSkgJT4lIGhlYWQoMSkKYGBgCnZlcmIxID0gZ3JvdXBfYnkgYXJnczEgPSBjb2xvcgp2ZXJiMiA9IHN1bW1hcmlzZSBhcmdzMiA9IHRhYmxlcz0gbWVhbih0YWJsZS9jYXJhdCkKYXJncyA9IHRhYmxlcwojIyMgUHJvYmxlbSAxMC43CmBgYHtyfQpNaW5vciA8LSBNaW5uZWFwb2xpczIwMTMlPiUKICBncm91cF9ieShGaXJzdCklPiUKICBzdW1tYXJpc2UodG90YWw9bigpKSU+JQogIG11dGF0ZShGaXJzdCA9IGlmZWxzZSh0b3RhbCA8IDUwMDAsICJtaW5vciIsIEZpcnN0KSkKTWlub3IlPiUKICBncm91cF9ieShGaXJzdCklPiUKICBzdW1tYXJpc2Uoc3VtKHRvdGFsKSkKYGBgCgo=</div>
 
 
 
