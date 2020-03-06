@@ -1,13 +1,13 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 10"
+subtitle: "DataComputing Chapters 8"
 author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 10 Exercises 10.1 - 10.7
+- DC Chapter 8 Exercises 8.1, 8.2, 8.3
 
 ## Front Matter
 
@@ -21,104 +21,45 @@ library(tidyverse)
 library(DataComputing)
 
 
+
 ```
 
 
 
-## Chapter 10 Exercises
+## Chapter 8 Exercises
 
-### Problem 10.1
+### Problem 8.1
 ```{r}
 ```
-Str() - summary function
-group_by() - data verb
-rank() - data verb
-mean() - reduction function
-filter()- data verb
-summary()- summary function
-summarize()- data verb
-glimpse()- summary function
 
-### Problem 10.2
+
+### Problem 8.2
 
 ```{r}
+CPS85 %>%
+  ggplot(aes(x= wage, fill = sex, color = sex))+
+  facet_wrap(~married)+
+  geom_density()
 ```
-1. mutate()
-2. arrange()
-3. select()
-4. filter()
-5.select() and filter()
-
-### Problem 10.3
-
 ```{r}
+CPS85 %>%
+  ggplot(aes(x = age, y = wage, color = sex))+
+  facet_wrap(~married)+
+  geom_smooth()
 ```
-1. nrow()
-2. names()
-3. help()
-4. library(package)
-5. group_by()
-
-### Problem 10.4
-```{r}
-```
-For Output Table A - arrange( asc(count))
-For Output Table B - filter(sex = F)
-For Output Table C - filter(sex = M)
-For Output Table D - summarize(total = n())
-For Output Table E - select(name), summarize( count = n())
-
-### Problem 10.5
-1. First use filter function to show cases with first and seconf, then use the n() to count the cases who picked the same candidate for the first and second 
 
 ```{r}
-Minneapolis2013 %>%
-  filter(First==Second)%>%
-  summarise(n())
+CPS85 %>%
+  ggplot(aes(x = age, y = wage, color = sex))+
+  facet_wrap(~sector)+
+  geom_smooth()
+```
+### Problem 8.3
+
+```{r}
+
 ```
 
-2. Use the filter function to make sure first and second are the same. After that we use group_by() with first and second to find out how many of each pair. The summarise(total=n()) will find the number of each pair, arrange will order by descreasing order, head(4) will include the undervote.
-```{r}
-Minneapolis2013%>%
-  group_by(First, Second)%>%
-  filter(First==Second)%>%
-  summarise(total=n())%>%
-  arrange(desc(total))%>%
-  head(4)
-```
-3. Use group by to group the first and Second. The filter function, then use summarise to find the number of distinct pairs. The arrange function will then arrange the results in decreasing total. Head displays the top 3 seconf and first choices.
-```{r}
-Minneapolis2013%>%
-  group_by(First, Second)%>%
-  filter(First=="OLE SAVIOR") %>%
-  summarise(total=n()) %>%
-  arrange(desc(total)) %>%
-  head(4)
-```
 
-### Problem 10.6
-1.
-```{r}
-diamonds %>% group_by(color) %>% summarise(avg = mean(carat)) %>% arrange(desc(avg)) %>% head(1)
-```
-Verb1 = group_by args1 = color
-Verb2 = summarise  args2 = avg = mean(carat)
-args = avg
-2.
-```{r}
-diamonds %>% group_by(color) %>% summarise(Tables = mean(table/carat)) %>% arrange(desc(Tables)) %>% head(1)
-```
-verb1 = group_by args1 = color
-verb2 = summarise args2 = tables= mean(table/carat)
-args = tables
-### Problem 10.7
-```{r}
-Minor <- Minneapolis2013%>%
-  group_by(First)%>%
-  summarise(total=n())%>%
-  mutate(First = ifelse(total < 5000, "minor", First))
-Minor%>%
-  group_by(First)%>%
-  summarise(sum(total))
-```
+
 
