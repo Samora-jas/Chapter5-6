@@ -1,13 +1,13 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 8"
+subtitle: "DataComputing Chapters 12"
 author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 8 Exercises 8.1, 8.2, 8.3
+- DC Chapter 8 Exercises 12.1, 12.2, 12.3, 12.4
 
 ## Front Matter
 
@@ -26,65 +26,32 @@ library(DataComputing)
 
 
 
-## Chapter 8 Exercises
+## Chapter 12 Exercises
 
-### Problem 8.1
+### Problem 12.1
+
 ```{r}
+
 ```
-1. Add a layer of glyphs
-2. Add a layer of glyphs
-3. construct the graphs frame
-4. change the scale of the frame
-5. set an axis label
-6. Divide the frame into facets
-7. Add a layer of glyphs
-8. set an axis label
-9. Divide the frame into facets
 
 ### Problem 8.2
 
 ```{r}
-CPS85 %>%
-  ggplot(aes(x= wage, fill = sex, color = sex))+
-  facet_wrap(~married)+
-  geom_density()
-```
-```{r}
-CPS85 %>%
-  ggplot(aes(x = age, y = wage, color = sex))+
-  facet_wrap(~married)+
-  geom_smooth()
+
 ```
 
-```{r}
-CPS85 %>%
-  ggplot(aes(x = age, y = wage, color = sex))+
-  facet_wrap(~sector)+
-  geom_smooth()
-```
-### Problem 8.3
+
+
+### Problem 12.3
 
 ```{r}
-CPS85 %>%
-  ggplot(aes(x = age, y = wage))+
-  geom_point()
-```
-```{r}
-CPS85 %>%
-  ggplot(aes(x = age, y = wage, color =sex))+
-  geom_point()
+
 ```
 
-```{r}
-CPS85 %>%
-  ggplot(aes(x= age, y = wage, color = sex))+
-  facet_wrap(~married)+
-  geom_point()
-```
+
+### Problem 12.4
 
 ```{r}
-CPS85 %>%
-  ggplot(aes(x = age, y = wage, color = married))+
-  geom_point()
+
 ```
 
