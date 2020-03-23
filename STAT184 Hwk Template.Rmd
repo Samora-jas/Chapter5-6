@@ -54,24 +54,25 @@ BothSexes
 
 ### Problem 12.2
 1. Version 1 cases represents the number of babies of each name born in diferent years. Version 2 cases represents both sexes count per year. Version 3 is the count of names in 1912 and 2012.
-2. Version 2 is wider.
-
-```{r}
-
-```
-
+2. Version 2 is wider. Therefore the code looks like: 
+spread (key=sex, value=nbabies)
+3. Version 3 is wider. Therefore the code looks like:
+gather(key=year, value=count, "1912", "2012")
+4.
+5.
 
 
 ### Problem 12.3
-
-```{r}
-
-```
+1.Data Frame A is wider then Data Frame C
+Data Frame C is wider then Data Frame B
+Data Frame A is wider then Data Frame B
+2. Data Frame B. You can find the change by taking the difference between the years.
+3. Data Frame A would make it easier to find sum of values.
 
 
 ### Problem 12.4
+1. The resulting data frame might be "too narrow" because the subject being one of the variables in the value = section is redundant.
+2.BP_wide %>%
+  gather(key = when, value = sbp, before, after)
 
-```{r}
-
-```
 
