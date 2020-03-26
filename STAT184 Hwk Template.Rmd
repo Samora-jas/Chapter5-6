@@ -1,13 +1,13 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 12"
+subtitle: "DataComputing Chapters 13 & 16"
 author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 8 Exercises 12.1, 12.2, 12.3, 12.4
+- DC Chapter 13 & 16 Exercises 13.1, 13.2, 13.3, 16.1, 16.2
 
 ## Front Matter
 
@@ -25,54 +25,27 @@ library(tidyr)
 
 
 
-## Chapter 12 Exercises
-
-### Problem 12.1
-
+## Chapter 13 Exercises
 ```{r}
 view(BabyNames)
 ```
-1. BothSexes replaces ???
+
+### Problem 13.1
+
 ```{r}
-BothSexes <-
-  BabyNames %>%
-  spread (key=sex, value= count) %>% 
-  filter(F>1, M>1)
-
-BothSexes
+BabyNames %>% 
+  group_by(sex) %>%
+  filter( rank(desc(count)) <= 5) 
 ```
-2.
-```{r}
-  BothSexes%>%
-  group_by(name) %>%
-  mutate(genderBalance=abs(log(F/M))) %>%
-  arrange(genderBalance)
-```
-3.
-4.
-5.
 
-### Problem 12.2
-1. Version 1 cases represents the number of babies of each name born in diferent years. Version 2 cases represents both sexes count per year. Version 3 is the count of names in 1912 and 2012.
-2. Version 2 is wider. Therefore the code looks like: 
-spread (key=sex, value=nbabies)
-3. Version 3 is wider. Therefore the code looks like:
-gather(key=year, value=count, "1912", "2012")
-4.
-5.
+### Problem 13.2
+
+### Problem 13.3
 
 
-### Problem 12.3
-1.Data Frame A is wider then Data Frame C
-Data Frame C is wider then Data Frame B
-Data Frame A is wider then Data Frame B
-2. Data Frame B. You can find the change by taking the difference between the years.
-3. Data Frame A would make it easier to find sum of values.
+## Chapter 16 Exercises 
 
+### Problem 16.1
 
-### Problem 12.4
-1. The resulting data frame might be "too narrow" because the subject being one of the variables in the value = section is redundant.
-2.BP_wide %>%
-  gather(key = when, value = sbp, before, after)
-
+### Problem 16.2
 
