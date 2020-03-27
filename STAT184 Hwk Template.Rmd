@@ -66,8 +66,8 @@ c)
 ```{r}
 Top100 %>%
   ggplot(aes(x=year, y = fractionB))+
-  geom_point()+ggtitle("Pop vs Time")+
-  xlab("Year")+ylab("Fraction of Babies")
+  geom_point()+ggtitle("Popular names vs Time")+
+  xlab("Year")+ylab("Fraction of the Babies")
 ```
 ### Problem 13.3
 ```{r}
@@ -80,11 +80,58 @@ group_by(name)%>%
 summarise(sum(count))
 Pnames
 ```
+```{r}
+Unpopular<-
+  BabyNames%>%
+  group_by(year)%>%
+  mutate(ranking=rank(desc(count)))%>%
+  filter(rank(desc(count))>1000)%>%
+  group_by(name)%>%
+  summarise(sum(count))
+Unpopular
+```
 
-
+```{r}
+Join<-
+  Pnames%>%
+  inner_join(Unpopular, by = "name")
+Join
+```
 ## Chapter 16 Exercises 
 
 ### Problem 16.1
-
+1)
+```{r}
+ymd("1999-02-08")-
+  mdy("April 30, 1777")
+```
+2)
+```{r}
+ymd("1999-02-08") -
+mdy("06-23-1912")
+```
+3)
+```{r}
+ymd("1999-02-08")-
+  dmy("3 March 1847")
+```
+4)
+```{r}
+ymd("1999-02-08")-
+  mdy("July 28, 1914")
+```
+5)
+```{r}
+ymd("1999-02-08")-
+  mdy("July 28tth, 1914")
+```
 ### Problem 16.2
-
+1.as.numeric
+2.readr::parse_number()
+3.neither
+4.readr::parse_number()
+5.readr::parse_number()
+6.neither
+7.neither
+8.neither
+9.neither
