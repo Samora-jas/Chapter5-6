@@ -20,6 +20,8 @@ library(mosaic)
 library(tidyverse)
 library(DataComputing)
 library(tidyr)
+library(lubridate)
+library(ggplot2)
 
 ```
 
@@ -39,8 +41,45 @@ BabyNames %>%
 ```
 
 ### Problem 13.2
+a)
+```{r}
+Names_<-
+  BabyNames%>%
+  group_by(year)%>%
+  filter(rank(desc(count))<= 100)%>%
+  summarise(total=sum(count))%>%
+  arrange(desc(year))%>%
+  mutate(ranking="Top100")
+Names_
+```
 
+b)
+```{r}
+Top100<-
+  Names_%>%
+  spread(key = ranking,value=total)%>%
+  arrange(desc(year))%>%
+  mutate(fractionB=(Top100)/ (Top100))
+Top100
+```
+c) 
+```{r}
+Top100 %>%
+  ggplot(aes(x=year, y = fractionB))+
+  geom_point()+ggtitle("Pop vs Time")+
+  xlab("Year")+ylab("Fraction of Babies")
+```
 ### Problem 13.3
+```{r}
+Pnames<-
+BabyNames%>%
+group_by(year)%>%
+mutate(ranking=rank(desc(count)))%>%
+filter(rank(desc(count))<= 50)%>%
+group_by(name)%>%
+summarise(sum(count))
+Pnames
+```
 
 
 ## Chapter 16 Exercises 
