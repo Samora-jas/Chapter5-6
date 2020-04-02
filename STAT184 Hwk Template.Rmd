@@ -1,13 +1,13 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 13 & 16"
+subtitle: "DataComputing Chapters 15"
 author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 13 & 16 Exercises 13.1, 13.2, 13.3, 16.1, 16.2
+- DC Chapter 15 Exercises 15.1, 15.2, 15.3, 15.4, 15.5
 
 ## Front Matter
 
@@ -27,111 +27,32 @@ library(ggplot2)
 
 
 
-## Chapter 13 Exercises
-```{r}
-view(BabyNames)
-```
+## Chapter 15 Exercises
 
-### Problem 13.1
+### Problem 15.1
 
 ```{r}
-BabyNames %>% 
-  group_by(sex) %>%
-  filter( rank(desc(count)) <= 5) 
+
 ```
 
-### Problem 13.2
-a)
-```{r}
-Names_<-
-  BabyNames%>%
-  group_by(year)%>%
-  filter(rank(desc(count))<= 100)%>%
-  summarise(total=sum(count))%>%
-  arrange(desc(year))%>%
-  mutate(ranking="Top100")
-Names_
-```
-
-b)
-```{r}
-Top100<-
-  Names_%>%
-  spread(key = ranking,value=total)%>%
-  arrange(desc(year))%>%
-  mutate(fractionB=(Top100)/ (Top100))
-Top100
-```
-c) 
-```{r}
-Top100 %>%
-  ggplot(aes(x=year, y = fractionB))+
-  geom_point()+ggtitle("Popular names vs Time")+
-  xlab("Year")+ylab("Fraction of the Babies")
-```
-### Problem 13.3
-```{r}
-Pnames<-
-BabyNames%>%
-group_by(year)%>%
-mutate(ranking=rank(desc(count)))%>%
-filter(rank(desc(count))<= 50)%>%
-group_by(name)%>%
-summarise(sum(count))
-Pnames
-```
-```{r}
-Unpopular<-
-  BabyNames%>%
-  group_by(year)%>%
-  mutate(ranking=rank(desc(count)))%>%
-  filter(rank(desc(count))>1000)%>%
-  group_by(name)%>%
-  summarise(sum(count))
-Unpopular
-```
+### Problem 15.2
 
 ```{r}
-Join<-
-  Pnames%>%
-  inner_join(Unpopular, by = "name")
-Join
-```
-## Chapter 16 Exercises 
 
-### Problem 16.1
-1)
-```{r}
-ymd("1999-02-08")-
-  mdy("April 30, 1777")
 ```
-2)
+
+### Problem 15.3
 ```{r}
-ymd("1999-02-08") -
-mdy("06-23-1912")
+
 ```
-3)
+
+### Problem 15.4
+
 ```{r}
-ymd("1999-02-08")-
-  dmy("3 March 1847")
+
 ```
-4)
+
+### Problem 15.5
 ```{r}
-ymd("1999-02-08")-
-  mdy("July 28, 1914")
+
 ```
-5)
-```{r}
-ymd("1999-02-08")-
-  mdy("July 28tth, 1914")
-```
-### Problem 16.2
-1.as.numeric
-2.readr::parse_number()
-3.neither
-4.readr::parse_number()
-5.readr::parse_number()
-6.neither
-7.neither
-8.neither
-9.neither
