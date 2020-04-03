@@ -67,5 +67,15 @@ Galton %>%
 ```
 
 ### Problem 15.5
-1. 
+1. The data indicates the Zip codes with high elderly populations tend to have high child populations as well.
+
+2. No there has to have consistency in the graph, the points match the confidence bands.
+
+80zipcodes
+1. The flat line is inconsistent with the data.
+
+2. Ratio is 1/4
+
+3. Yes the theory seems right in this case.
+
 
