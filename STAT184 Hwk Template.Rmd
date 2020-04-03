@@ -32,27 +32,40 @@ library(ggplot2)
 ### Problem 15.1
 
 ```{r}
+CPS85 %>%                                                             
+  ggplot(aes(y = wage, x = sex )) + geom_boxplot(aes(fill = sex), 
+notch = TRUE,
+position = position_dodge(width = 0.8),outlier.size = 1, outlier.colour = "gray") 
 
 ```
 
 ### Problem 15.2
+1. The likely height among NCHS people would likey be around 1.65 meters  long.
 
-```{r}
+2.Based on the graph the most likely height for female would be around 1.6 meters. And for male it would be 1.7 meters.
 
-```
+3. For a 40 year old I estimate the bmi to be around 26. For 70 year old to be around 29.
+
 
 ### Problem 15.3
 ```{r}
-
+ CPS85 %>% 
+  ggplot(aes(x = educ, y = wage, color = sex)) +
+     stat_smooth(method = lm) +
+     geom_point() + 
+     ylim(0,15) +
+  theme(legend.position = "top") 
 ```
 
 ### Problem 15.4
 
 ```{r}
-
+Galton %>%
+  ggplot(aes(x = height, y = mother)) +
+  facet_wrap(~ sex) +
+  geom_density2d()
 ```
 
 ### Problem 15.5
-```{r}
+1. 
 
-```
