@@ -1,13 +1,13 @@
 ---
 title: "STAT 184 Homework Exercises" 
-subtitle: "DataComputing Chapters 15"
+subtitle: "DataComputing Chapters 17"
 author: "Jason Abu"
 output: html_notebook
 ---
 
 ## Assigned Exercises
 
-- DC Chapter 15 Exercises 15.1, 15.2, 15.3, 15.4, 15.5
+DC Ch 17 Exercises: 17.1, 17.3, 17.4, 17.5, 17.7
 
 ## Front Matter
 
@@ -27,55 +27,31 @@ library(ggplot2)
 
 
 
-## Chapter 15 Exercises
+## Chapter 17 Exercises
 
-### Problem 15.1
+### Problem 17.1
 
 ```{r}
-CPS85 %>%                                                             
-  ggplot(aes(y = wage, x = sex )) + geom_boxplot(aes(fill = sex), 
-notch = TRUE,
-position = position_dodge(width = 0.8),outlier.size = 1, outlier.colour = "gray") 
+
 
 ```
 
-### Problem 15.2
-1. The likely height among NCHS people would likey be around 1.65 meters  long.
-
-2.Based on the graph the most likely height for female would be around 1.6 meters. And for male it would be 1.7 meters.
-
-3. For a 40 year old I estimate the bmi to be around 26. For 70 year old to be around 29.
+### Problem 17.3
 
 
-### Problem 15.3
+
+### Problem 17.4
 ```{r}
- CPS85 %>% 
-  ggplot(aes(x = educ, y = wage, color = sex)) +
-     stat_smooth(method = lm) +
-     geom_point() + 
-     ylim(0,15) +
-  theme(legend.position = "top") 
+  
 ```
 
-### Problem 15.4
+### Problem 17.5
 
 ```{r}
-Galton %>%
-  ggplot(aes(x = height, y = mother)) +
-  facet_wrap(~ sex) +
-  geom_density2d()
+
 ```
 
-### Problem 15.5
-1. The data indicates the Zip codes with high elderly populations tend to have high child populations as well.
+### Problem 17.7
 
-2. No there has to have consistency in the graph, the points match the confidence bands.
-
-80zipcodes
-1. The flat line is inconsistent with the data.
-
-2. Ratio is 1/4
-
-3. Yes the theory seems right in this case.
 
 
