@@ -44,7 +44,12 @@ Boy_names
 ```
 Names with a space (like Lee Ann)
 ```{r}
-
+BabyNames %>%
+  group_by(sex,name)%>%
+  filter(grep("\\s", name))%>%
+  summarise(total=sum(count))%>%
+  arrange(desc(total))%>%
+  head(10)
 
 ```
 Names ending with “joe” (like BettyJoe)
