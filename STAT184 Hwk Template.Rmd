@@ -39,6 +39,7 @@ Boys’ names ending in a vowel
 regex <- " .*([aeiou])$"
 Boy_names <- BabyNames %>% group_by(name) %>% filter(grepl(pattern = regex,name), sex == "M") %>%
   summarise(s = sum(count)) %>% filter(rank(desc(s)) <= 10)
+Boy_names
 
 ```
 Names with a space (like Lee Ann)
@@ -75,13 +76,20 @@ BibleNames <-
 1
 ```{r}
 Names <- BibleNames %>% group_by(name) %>% filter(grepl(pattern = "^Bar|bar...$|bar$|^Dam|dam...$|dam$|^Lory|lory...$|lory$", name))
+Names
 ```
-
+2
 ```{r}
-
+EndNames <- BibleNames %>% group_by(name) %>% 
+  filter(grepl(pattern = "bar$|dam$|lory$", name))
+EndNames
 ```
 
 ### Problem 17.7
-
+```{r}
+BabyBibleNames <- BibleNames %>% left_join(BabyNames, by = c("name" = "name")) %>%
+  group_by(name) %>% summarise(total= sum(count)) %>% filter(rank(desc(total)) <= 10)
+BabyBibleNames
+```
 
 
