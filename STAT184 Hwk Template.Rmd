@@ -22,6 +22,7 @@ library(DataComputing)
 library(tidyr)
 library(lubridate)
 library(ggplot2)
+library(dplyr)
 
 ```
 
@@ -29,23 +30,52 @@ library(ggplot2)
 
 ## Chapter 17 Exercises
 
+
 ### Problem 17.1
+the 10 most popular names according to each of these criteria:
+Boys’ names ending in a vowel
 
 ```{r}
+regex <- " .*([aeiou])$"
+Boy_names <- BabyNames %>% group_by(name) %>% filter(grepl(pattern = regex,name), sex == "M") %>%
+  summarise(s = sum(count)) %>% filter(rank(desc(s)) <= 10)
 
+```
+Names with a space (like Lee Ann)
+```{r}
+
+
+```
+Names ending with “joe” (like BettyJoe)
+```{r}
+BabyNames%>%
+  filter(grepl("Joe|joe$", name)) %>%
+  group_by(name) %>%
+  summarise(total = sum(count)) %>%
+  arrange(desc(total))
 
 ```
 
 ### Problem 17.3
-
+The string would represents a phone number. The digits of that phone number are being extracted
 
 
 ### Problem 17.4
-```{r}
-  
-```
+1 The strings would be 2 characters long.
+
+2 It would be the same amount as there are US states and territories.
+
+3 Those are U.S. states abbreviations.
 
 ### Problem 17.5
+```{r}
+BibleNames <- 
+  readr::read_csv("http://tiny.cc/dcf/BibleNames.csv")
+```
+1
+```{r}
+Names <- BibleNames %>% group_by(name) %>% filter(grepl(pattern = "^Bar|bar...$|bar$|^Dam|dam...$|dam$|^Lory|lory...$|lory$", name))
+```
 
 ```{r}
 
