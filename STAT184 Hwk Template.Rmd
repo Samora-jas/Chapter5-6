@@ -23,6 +23,7 @@ library(tidyr)
 library(lubridate)
 library(ggplot2)
 library(dplyr)
+library(party::ctree)
 
 ```
 
@@ -32,13 +33,50 @@ library(dplyr)
 
 
 ### Problem 18.1
+1.
 
+2.
+
+3.
+
+4.
 
 ### Problem 18.2
+```{r}
+NCHS %>%
+  na.omit() %>%
+  nrow()
+```
 
+```{r}
+CompleteCases <- 
+  NCHS %>%
+  select(diabetic, weight, age, bmi, chol, smoker) %>%
+  na.omit()
+```
 
+```{r}
+CompleteCases %>% nrow()
+```
 
+```{r}
+mod1 <- party::ctree(diabetic ~ weight + chol, data = CompleteCases)
 
+plot(mod1, type = "simple")
+```
 
+```{r}
+CompleteCases %>%
+  mutate(probability = as.numeric(predict(mod1)), 
+         likelihood = ifelse(diabetic, probability, 1-probability)) %>%
+  summarise(log_likelihood = sum(log(likelihood)))
+```
 
+1.
+
+2.
+
+3.
+
+4.
 

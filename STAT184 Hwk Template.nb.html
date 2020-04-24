@@ -237,10 +237,22 @@ summary {
 <h2>Front Matter</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KERhdGFDb21wdXRpbmcpXG5saWJyYXJ5KHRpZHlyKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxuYGBgXG5gYGAifQ== -->
-<p><code>r</code>r # clean up workspace environment rm(list = ls()) # all packages used for the assignment library(mosaic) library(tidyverse) library(DataComputing) library(tidyr) library(lubridate) library(ggplot2) library(dplyr)</p>
-<pre><code></code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KERhdGFDb21wdXRpbmcpXG5saWJyYXJ5KHRpZHlyKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShwYXJ0eTo6Y3RyZWUpXG5gYGAifQ== -->
+<pre class="r"><code># clean up workspace environment
+rm(list = ls())
+# all packages used for the assignment
+library(mosaic)
+library(tidyverse)
+library(DataComputing)
+library(tidyr)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+library(party::ctree)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGlicmFyeShwYXJ0eTo6Y3RyZWUpIDogJ3BhY2thZ2UnIG11c3QgYmUgb2YgbGVuZ3RoIDFcbiJ9 -->
+<pre><code>Error in library(party::ctree) : 'package' must be of length 1</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -248,14 +260,78 @@ summary {
 <h2>Chapter 18 Exercises</h2>
 <div id="problem-18.1" class="section level3">
 <h3>Problem 18.1</h3>
+<ol style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 </div>
 <div id="problem-18.2" class="section level3">
 <h3>Problem 18.2</h3>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkNIUyAlPiVcbiAgbmEub21pdCgpICU+JVxuICBucm93KClcbmBgYCJ9 -->
+<pre class="r"><code>NCHS %&gt;%
+  na.omit() %&gt;%
+  nrow()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEyMDEzXG4ifQ== -->
+<pre><code>[1] 12013</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ29tcGxldGVDYXNlcyA8LSBcbiAgTkNIUyAlPiVcbiAgc2VsZWN0KGRpYWJldGljLCB3ZWlnaHQsIGFnZSwgYm1pLCBjaG9sLCBzbW9rZXIpICU+JVxuICBuYS5vbWl0KClcbmBgYCJ9 -->
+<pre class="r"><code>CompleteCases &lt;- 
+  NCHS %&gt;%
+  select(diabetic, weight, age, bmi, chol, smoker) %&gt;%
+  na.omit()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ29tcGxldGVDYXNlcyAlPiUgbnJvdygpXG5gYGAifQ== -->
+<pre class="r"><code>CompleteCases %&gt;% nrow()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIyNzk3XG4ifQ== -->
+<pre><code>[1] 22797</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9kMSA8LSBwYXJ0eTo6Y3RyZWUoZGlhYmV0aWMgfiB3ZWlnaHQgKyBjaG9sLCBkYXRhID0gQ29tcGxldGVDYXNlcylcbmBgYCJ9 -->
+<pre class="r"><code>mod1 &lt;- party::ctree(diabetic ~ weight + chol, data = CompleteCases)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbG9hZE5hbWVzcGFjZShuYW1lKSA6IHRoZXJlIGlzIG5vIHBhY2thZ2UgY2FsbGVkIOKAmHBhcnR54oCZXG4ifQ== -->
+<pre><code>Error in loadNamespace(name) : there is no package called ‘party’</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQ29tcGxldGVDYXNlcyAlPiVcbiAgbXV0YXRlKHByb2JhYmlsaXR5ID0gYXMubnVtZXJpYyhwcmVkaWN0KG1vZDEpKSwgXG4gICAgICAgICBsaWtlbGlob29kID0gaWZlbHNlKGRpYWJldGljLCBwcm9iYWJpbGl0eSwgMS1wcm9iYWJpbGl0eSkpICU+JVxuICBzdW1tYXJpc2UobG9nX2xpa2VsaWhvb2QgPSBzdW0obG9nKGxpa2VsaWhvb2QpKSlcbmBgYCJ9 -->
+<pre class="r"><code>CompleteCases %&gt;%
+  mutate(probability = as.numeric(predict(mod1)), 
+         likelihood = ifelse(diabetic, probability, 1-probability)) %&gt;%
+  summarise(log_likelihood = sum(log(likelihood)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol style="list-style-type: decimal">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDE4IgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKREMgQ2ggMTcgRXhlcmNpc2VzOiAxOC4xLCAxOC4yCgojIyBGcm9udCBNYXR0ZXIKCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHRpZHlyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQoKYGBgCgoKCiMjIENoYXB0ZXIgMTggRXhlcmNpc2VzCgoKIyMjIFByb2JsZW0gMTguMQoKCiMjIyBQcm9ibGVtIDE4LjIKCgoKCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDE4IgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKREMgQ2ggMTcgRXhlcmNpc2VzOiAxOC4xLCAxOC4yCgojIyBGcm9udCBNYXR0ZXIKCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHRpZHlyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHBhcnR5OjpjdHJlZSkKCmBgYAoKCgojIyBDaGFwdGVyIDE4IEV4ZXJjaXNlcwoKCiMjIyBQcm9ibGVtIDE4LjEKMS4KCjIuCgozLgoKNC4KCiMjIyBQcm9ibGVtIDE4LjIKYGBge3J9Ck5DSFMgJT4lCiAgbmEub21pdCgpICU+JQogIG5yb3coKQpgYGAKCmBgYHtyfQpDb21wbGV0ZUNhc2VzIDwtIAogIE5DSFMgJT4lCiAgc2VsZWN0KGRpYWJldGljLCB3ZWlnaHQsIGFnZSwgYm1pLCBjaG9sLCBzbW9rZXIpICU+JQogIG5hLm9taXQoKQpgYGAKCmBgYHtyfQpDb21wbGV0ZUNhc2VzICU+JSBucm93KCkKYGBgCgpgYGB7cn0KbW9kMSA8LSBwYXJ0eTo6Y3RyZWUoZGlhYmV0aWMgfiB3ZWlnaHQgKyBjaG9sLCBkYXRhID0gQ29tcGxldGVDYXNlcykKCnBsb3QobW9kMSwgdHlwZSA9ICJzaW1wbGUiKQpgYGAKCmBgYHtyfQpDb21wbGV0ZUNhc2VzICU+JQogIG11dGF0ZShwcm9iYWJpbGl0eSA9IGFzLm51bWVyaWMocHJlZGljdChtb2QxKSksIAogICAgICAgICBsaWtlbGlob29kID0gaWZlbHNlKGRpYWJldGljLCBwcm9iYWJpbGl0eSwgMS1wcm9iYWJpbGl0eSkpICU+JQogIHN1bW1hcmlzZShsb2dfbGlrZWxpaG9vZCA9IHN1bShsb2cobGlrZWxpaG9vZCkpKQpgYGAKCjEuCgoyLgoKMy4KCjQuCgo=</div>
 
 
 
