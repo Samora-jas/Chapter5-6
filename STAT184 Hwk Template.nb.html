@@ -222,7 +222,7 @@ summary {
 
 
 <h1 class="title toc-ignore">STAT 184 Homework Exercises</h1>
-<h3 class="subtitle">DataComputing Chapters 17</h3>
+<h3 class="subtitle">DataComputing Chapters 18</h3>
 <h4 class="author">Jason Abu</h4>
 
 </div>
@@ -231,170 +231,31 @@ summary {
 <!-- rnb-text-begin -->
 <div id="assigned-exercises" class="section level2">
 <h2>Assigned Exercises</h2>
-<p>DC Ch 17 Exercises: 17.1, 17.3, 17.4, 17.5, 17.7</p>
+<p>DC Ch 17 Exercises: 18.1, 18.2</p>
 </div>
 <div id="front-matter" class="section level2">
 <h2>Front Matter</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KERhdGFDb21wdXRpbmcpXG5saWJyYXJ5KHRpZHlyKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxuYGBgIn0= -->
-<pre class="r"><code># clean up workspace environment
-rm(list = ls())
-# all packages used for the assignment
-library(mosaic)
-library(tidyverse)
-library(DataComputing)
-library(tidyr)
-library(lubridate)
-library(ggplot2)
-library(dplyr)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KERhdGFDb21wdXRpbmcpXG5saWJyYXJ5KHRpZHlyKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r # clean up workspace environment rm(list = ls()) # all packages used for the assignment library(mosaic) library(tidyverse) library(DataComputing) library(tidyr) library(lubridate) library(ggplot2) library(dplyr)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="chapter-17-exercises" class="section level2">
-<h2>Chapter 17 Exercises</h2>
-<div id="problem-17.1" class="section level3">
-<h3>Problem 17.1</h3>
-<p>the 10 most popular names according to each of these criteria: Boys’ names ending in a vowel</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVnZXggPC0gXCIgLiooW2FlaW91XSkkXCJcbkJveV9uYW1lcyA8LSBCYWJ5TmFtZXMgJT4lIGdyb3VwX2J5KG5hbWUpICU+JSBmaWx0ZXIoZ3JlcGwocGF0dGVybiA9IHJlZ2V4LG5hbWUpLCBzZXggPT0gXCJNXCIpICU+JVxuICBzdW1tYXJpc2UocyA9IHN1bShjb3VudCkpICU+JSBmaWx0ZXIocmFuayhkZXNjKHMpKSA8PSAxMClcbkJveV9uYW1lc1xuYGBgIn0= -->
-<pre class="r"><code>regex &lt;- &quot; .*([aeiou])$&quot;
-Boy_names &lt;- BabyNames %&gt;% group_by(name) %&gt;% filter(grepl(pattern = regex,name), sex == &quot;M&quot;) %&gt;%
-  summarise(s = sum(count)) %&gt;% filter(rank(desc(s)) &lt;= 10)
-Boy_names</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MH0sInJkZiI6IlVrUllNZ3BZQ2dBQUFBSUFBd1FCQUFJREFBQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBQVFBQUFBQUFBQUFBMEFBQUFBQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFJQUJBQUpBQUFBQkc1aGJXVUFCQUFKQUFBQUFYTUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFBQUFBUUNBQUFBQVFBRUFBa0FBQUFGWTJ4aGMzTUFBQUFRQUFBQUFRQUVBQWtBQUFBS1pHRjBZUzVtY21GdFpRQUFBUDRBQUFRQ0FBQUFBUUFFQUFrQUFBQUhiM0IwYVc5dWN3QUFBaE1BQUFBRkFBQUFFQUFBQUFFQUJBQUpBQUFBQVhJQUFBQVFBQUFBQVFBRUFBa0FBQUFQZFc1dVlXMWxaQzFqYUhWdWF5MDVBQUFBQ2dBQUFBRUFBQUFBQUFBQURRQUFBQUVBQUFBQUFBQUFEUUFBQUFFQUFBQUNBQUFFQWdBQUF2OEFBQUFRQUFBQUJRQUVBQWtBQUFBR1pXNW5hVzVsQUFRQUNRQUFBQVZzWVdKbGJBQUVBQWtBQUFBT2NtOTNibUZ0WlhNdWNISnBiblFBQkFBSkFBQUFDbkp2ZDNNdWRHOTBZV3dBQkFBSkFBQUFDbU52YkhNdWRHOTBZV3dBQUFEK0FBQUEvZz09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["s"],"name":[2],"type":["int"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
-  </script>
+<div id="chapter-18-exercises" class="section level2">
+<h2>Chapter 18 Exercises</h2>
+<div id="problem-18.1" class="section level3">
+<h3>Problem 18.1</h3>
 </div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Names with a space (like Lee Ann)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmFieU5hbWVzICU+JVxuICBncm91cF9ieShzZXgsbmFtZSklPiVcbiAgZmlsdGVyKGdyZXAoXCJcXFxcc1wiLCBuYW1lKSklPiVcbiAgc3VtbWFyaXNlKHRvdGFsPXN1bShjb3VudCkpJT4lXG4gIGFycmFuZ2UoZGVzYyh0b3RhbCkpJT4lXG4gIGhlYWQoMTApXG5cbmBgYCJ9 -->
-<pre class="r"><code>BabyNames %&gt;%
-  group_by(sex,name)%&gt;%
-  filter(grep(&quot;\\s&quot;, name))%&gt;%
-  summarise(total=sum(count))%&gt;%
-  arrange(desc(total))%&gt;%
-  head(10)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Names ending with “joe” (like BettyJoe)</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmFieU5hbWVzJT4lXG4gIGZpbHRlcihncmVwbChcIkpvZXxqb2UkXCIsIG5hbWUpKSAlPiVcbiAgZ3JvdXBfYnkobmFtZSkgJT4lXG4gIHN1bW1hcmlzZSh0b3RhbCA9IHN1bShjb3VudCkpICU+JVxuICBhcnJhbmdlKGRlc2ModG90YWwpKVxuYGBgIn0= -->
-<pre class="r"><code>BabyNames%&gt;%
-  filter(grepl(&quot;Joe|joe$&quot;, name)) %&gt;%
-  group_by(name) %&gt;%
-  summarise(total = sum(count)) %&gt;%
-  arrange(desc(total))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6ODd9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQUFRQUFBQVZ3QUVBQWtBQUFBRFNtOWxBQVFBQ1FBQUFBUktiMlZzQUFRQUNRQUFBQVJLYjJWNUFBUUFDUUFBQUFaS2IyVnpjR2dBQkFBSkFBQUFCa3B2Wld4c1pRQUVBQWtBQUFBSFNtOWxiR3hsYmdBRUFBa0FBQUFHU205bGRIUmhBQVFBQ1FBQUFBWktiMlZzYkdFQUJBQUpBQUFBQjBwdlpYTmxjR2dBQkFBSkFBQUFCa3B2WlhSMFpRQUVBQWtBQUFBRlNtOWxiR3dBQkFBSkFBQUFCVXB2Wld4NUFBUUFDUUFBQUFaS2IyVmhibTRBQkFBSkFBQUFCMHB2Wld4bGJtVUFCQUFKQUFBQUIwcHZaV3hzZVc0QUJBQUpBQUFBQmtwdlpXeDViZ0FFQUFrQUFBQUpTbTlsYzNCb2FXNWxBQVFBQ1FBQUFBZEtiMlZoYm01aEFBUUFDUUFBQUFoQ2FXeHNlV3B2WlFBRUFBa0FBQUFFU205bGFRQUVBQWtBQUFBSFNtOWxjMmxoYUFBRUFBa0FBQUFKU205bGJtRjBhR0Z1QUFRQUNRQUFBQWhLYjJWaGJtZGxiQUFFQUFrQUFBQUtTbTlsWVc1MGFHOXVlUUFFQUFrQUFBQUhTbTlsYkdWbGJnQUVBQWtBQUFBRlNtOWxiR2tBQkFBSkFBQUFCVXB2WldSNUFBUUFDUUFBQUFkS2IyVnNlVzV1QUFRQUNRQUFBQVpLYjJWc2FXVUFCQUFKQUFBQUJrcHZaWFp2YmdBRUFBa0FBQUFGU205bGNHZ0FCQUFKQUFBQUIwcHZaV0Z1Ym1VQUJBQUpBQUFBQmtwdlpXeHNlUUFFQUFrQUFBQUdTbTlsYkdWbEFBUUFDUUFBQUFWS2IyVnVaUUFFQUFrQUFBQUlRbTlpWW5scWIyVUFCQUFKQUFBQUJFcHZaV1VBQkFBSkFBQUFCMHB2Wld4cGJtVUFCQUFKQUFBQUNFcHZaWFpoYm01cEFBUUFDUUFBQUFkS2IyVjZhV0ZvQUFRQUNRQUFBQVZLYjJWaGJnQUVBQWtBQUFBR1NtOWxiSGx6QUFRQUNRQUFBQVJLYjJWdUFBUUFDUUFBQUFSS2IyVmlBQVFBQ1FBQUFBZEtiMlZzYVhOaEFBUUFDUUFBQUFaS2IyVnRZWElBQkFBSkFBQUFCMHB2Wld4c2FXVUFCQUFKQUFBQUIwcHZaWFpoYm5rQUJBQUpBQUFBQjBwdlpYWmhibWtBQkFBSkFBQUFDRXB2WlhaaGJtNTVBQVFBQ1FBQUFBVktiMlZzWlFBRUFBa0FBQUFHU205bGJHbDZBQVFBQ1FBQUFBaEtiMlZ6WlhSMFpRQUVBQWtBQUFBR1NtOWxjMmhoQUFRQUNRQUFBQWxLYjJWc2JHbGhibVVBQkFBSkFBQUFCRXB2WldRQUJBQUpBQUFBQjBwdlpXeHBibUVBQkFBSkFBQUFDa3B2WlcxcFkyaGhaV3dBQkFBSkFBQUFCMHB2WlhGMVlXNEFCQUFKQUFBQUJrcHZaWEpoZVFBRUFBa0FBQUFGU205bGJHRUFCQUFKQUFBQUJVcHZaVzE1QUFRQUNRQUFBQWRLYjJWeVpXeHNBQVFBQ1FBQUFBUktiMlZ6QUFRQUNRQUFBQVpOWVhKcWIyVUFCQUFKQUFBQUNFcHZaWEJvYVc1bEFBUUFDUUFBQUFkS2IyVnBjMmhoQUFRQUNRQUFBQVpLYjJWc2FXRUFCQUFKQUFBQUJrcHZaV3hwY3dBRUFBa0FBQUFIU205bGJtVnNiQUFFQUFrQUFBQUdTbTlsYzJWbUFBUUFDUUFBQUFsQ2FXeHNhV1ZxYjJVQUJBQUpBQUFBQmtwdlpXRnVZUUFFQUFrQUFBQUdTbTlsWkc5dUFBUUFDUUFBQUFWS2IyVnVZUUFFQUFrQUFBQUlTbTlsZVd4NWJtNEFCQUFKQUFBQUIwMWhjbmxxYjJVQUJBQUpBQUFBQlVwdlpXVnVBQVFBQ1FBQUFBaEtiMlZzWVdsdVpRQUVBQWtBQUFBR1NtOWxiR0Z1QUFRQUNRQUFBQWRLYjJWc2FXVnNBQVFBQ1FBQUFBaEtiMlZzYVhOellRQUVBQWtBQUFBSVNtOWxiRzkxYVhNQUJBQUpBQUFBQjBwdlpXeDVibVVBQkFBSkFBQUFCa3B2WlhaaGJnQUVBQWtBQUFBSVNtOWxlbVYwZEdVQUJBQUpBQUFBQ1VwdmFHNXVlV3B2WlFBQUFBMEFBQUJYQUFjRjhnQUQ3VTRBQU5zSUFBQThOd0FBTUUwQUFCVEhBQUFOeHdBQURZa0FBQXJGQUFBSDBBQUFCejBBQUFYV0FBQUZBZ0FBQkVnQUFBTmRBQUFDcmdBQUFuUUFBQUhiQUFBQmlRQUFBWEVBQUFFMEFBQUJNZ0FBQVJRQUFBRUFBQUFBeEFBQUFMOEFBQUMrQUFBQXVnQUFBTE1BQUFDa0FBQUFrQUFBQUlrQUFBQjVBQUFBYWdBQUFGNEFBQUJaQUFBQVdRQUFBRTRBQUFBN0FBQUFPd0FBQURvQUFBQTZBQUFBTndBQUFDa0FBQUFrQUFBQUlnQUFBQjhBQUFBZEFBQUFGd0FBQUJjQUFBQVZBQUFBRlFBQUFCSUFBQUFTQUFBQUVRQUFBQkFBQUFBUEFBQUFEUUFBQUEwQUFBQU5BQUFBREFBQUFBd0FBQUFNQUFBQURBQUFBQXdBQUFBTEFBQUFDZ0FBQUFvQUFBQUtBQUFBQ2dBQUFBb0FBQUFHQUFBQUJnQUFBQVlBQUFBR0FBQUFCZ0FBQUFZQUFBQUZBQUFBQlFBQUFBVUFBQUFGQUFBQUJRQUFBQVVBQUFBRkFBQUFCUUFBQUFVQUFBQUZBQUFFQWdBQUFBRUFCQUFKQUFBQUNYSnZkeTV1WVcxbGN3QUFBQTBBQUFBQ2dBQUFBUC8vLzZrQUFBUUNBQUFBQVFBRUFBa0FBQUFGWTJ4aGMzTUFBQUFRQUFBQUFRQUVBQWtBQUFBS1pHRjBZUzVtY21GdFpRQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQUNBQVFBQ1FBQUFBUnVZVzFsQUFRQUNRQUFBQVYwYjNSaGJBQUFBUDRBQUFRQ0FBQUFBUUFFQUFrQUFBQUhiM0IwYVc5dWN3QUFBaE1BQUFBRkFBQUFFQUFBQUFFQUJBQUpBQUFBQVhJQUFBQVFBQUFBQVFBRUFBa0FBQUFRZFc1dVlXMWxaQzFqYUhWdWF5MDFOUUFBQUFvQUFBQUJBQUFBQUFBQUFBMEFBQUFCQUFBQVZ3QUFBQTBBQUFBQkFBQUFBZ0FBQkFJQUFBVC9BQUFBRUFBQUFBVUFCQUFKQUFBQUJtVnVaMmx1WlFBRUFBa0FBQUFGYkdGaVpXd0FCQUFKQUFBQURuSnZkMjVoYldWekxuQnlhVzUwQUFRQUNRQUFBQXB5YjNkekxuUnZkR0ZzQUFRQUNRQUFBQXBqYjJ4ekxuUnZkR0ZzQUFBQS9nQUFBUDQ9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Joe","2":"460274"},{"1":"Joel","2":"257358"},{"1":"Joey","2":"56072"},{"1":"Joesph","2":"15415"},{"1":"Joelle","2":"12365"},{"1":"Joellen","2":"5319"},{"1":"Joetta","2":"3527"},{"1":"Joella","2":"3465"},{"1":"Joeseph","2":"2757"},{"1":"Joette","2":"2000"},{"1":"Joell","2":"1853"},{"1":"Joely","2":"1494"},{"1":"Joeann","2":"1282"},{"1":"Joelene","2":"1096"},{"1":"Joellyn","2":"861"},{"1":"Joelyn","2":"686"},{"1":"Joesphine","2":"628"},{"1":"Joeanna","2":"475"},{"1":"Billyjoe","2":"393"},{"1":"Joei","2":"369"},{"1":"Joesiah","2":"308"},{"1":"Joenathan","2":"306"},{"1":"Joeangel","2":"276"},{"1":"Joeanthony","2":"256"},{"1":"Joeleen","2":"196"},{"1":"Joeli","2":"191"},{"1":"Joedy","2":"190"},{"1":"Joelynn","2":"186"},{"1":"Joelie","2":"179"},{"1":"Joevon","2":"164"},{"1":"Joeph","2":"144"},{"1":"Joeanne","2":"137"},{"1":"Joelly","2":"121"},{"1":"Joelee","2":"106"},{"1":"Joene","2":"94"},{"1":"Bobbyjoe","2":"89"},{"1":"Joee","2":"89"},{"1":"Joeline","2":"78"},{"1":"Joevanni","2":"59"},{"1":"Joeziah","2":"59"},{"1":"Joean","2":"58"},{"1":"Joelys","2":"58"},{"1":"Joen","2":"55"},{"1":"Joeb","2":"41"},{"1":"Joelisa","2":"36"},{"1":"Joemar","2":"34"},{"1":"Joellie","2":"31"},{"1":"Joevany","2":"29"},{"1":"Joevani","2":"23"},{"1":"Joevanny","2":"23"},{"1":"Joele","2":"21"},{"1":"Joeliz","2":"21"},{"1":"Joesette","2":"18"},{"1":"Joesha","2":"18"},{"1":"Joelliane","2":"17"},{"1":"Joed","2":"16"},{"1":"Joelina","2":"15"},{"1":"Joemichael","2":"13"},{"1":"Joequan","2":"13"},{"1":"Joeray","2":"13"},{"1":"Joela","2":"12"},{"1":"Joemy","2":"12"},{"1":"Joerell","2":"12"},{"1":"Joes","2":"12"},{"1":"Marjoe","2":"12"},{"1":"Joephine","2":"11"},{"1":"Joeisha","2":"10"},{"1":"Joelia","2":"10"},{"1":"Joelis","2":"10"},{"1":"Joenell","2":"10"},{"1":"Joesef","2":"10"},{"1":"Billiejoe","2":"6"},{"1":"Joeana","2":"6"},{"1":"Joedon","2":"6"},{"1":"Joena","2":"6"},{"1":"Joeylynn","2":"6"},{"1":"Maryjoe","2":"6"},{"1":"Joeen","2":"5"},{"1":"Joelaine","2":"5"},{"1":"Joelan","2":"5"},{"1":"Joeliel","2":"5"},{"1":"Joelissa","2":"5"},{"1":"Joelouis","2":"5"},{"1":"Joelyne","2":"5"},{"1":"Joevan","2":"5"},{"1":"Joezette","2":"5"},{"1":"Johnnyjoe","2":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[87]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="problem-17.3" class="section level3">
-<h3>Problem 17.3</h3>
-<p>The string would represents a phone number. The digits of that phone number are being extracted</p>
-</div>
-<div id="problem-17.4" class="section level3">
-<h3>Problem 17.4</h3>
-<p>1 The strings would be 2 characters long.</p>
-<p>2 It would be the same amount as there are US states and territories.</p>
-<p>3 Those are U.S. states abbreviations.</p>
-</div>
-<div id="problem-17.5" class="section level3">
-<h3>Problem 17.5</h3>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmlibGVOYW1lcyA8LSBcbiAgcmVhZHI6OnJlYWRfY3N2KFwiaHR0cDovL3RpbnkuY2MvZGNmL0JpYmxlTmFtZXMuY3N2XCIpXG5gYGAifQ== -->
-<pre class="r"><code>BibleNames &lt;- 
-  readr::read_csv(&quot;http://tiny.cc/dcf/BibleNames.csv&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBuYW1lID0gXHUwMDFiWzMxbWNvbF9jaGFyYWN0ZXIoKVx1MDAxYlszOW0sXG4gIG1lYW5pbmcgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bVxuKVxuMSBwYXJzaW5nIGZhaWx1cmUuXG5yb3cgY29sICBleHBlY3RlZCAgICBhY3R1YWwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZpbGVcbjg3MyAgLS0gMiBjb2x1bW5zIDMgY29sdW1ucyAnaHR0cDovL3RpbnkuY2MvZGNmL0JpYmxlTmFtZXMuY3N2J1xuIn0= -->
-<pre><code>Parsed with column specification:
-cols(
-  name = [31mcol_character()[39m,
-  meaning = [31mcol_character()[39m
-)
-1 parsing failure.
-row col  expected    actual                                file
-873  -- 2 columns 3 columns 'http://tiny.cc/dcf/BibleNames.csv'</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>1</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTmFtZXMgPC0gQmlibGVOYW1lcyAlPiUgZ3JvdXBfYnkobmFtZSkgJT4lIGZpbHRlcihncmVwbChwYXR0ZXJuID0gXCJeQmFyfGJhci4uLiR8YmFyJHxeRGFtfGRhbS4uLiR8ZGFtJHxeTG9yeXxsb3J5Li4uJHxsb3J5JFwiLCBuYW1lKSlcbk5hbWVzXG5gYGAifQ== -->
-<pre class="r"><code>Names &lt;- BibleNames %&gt;% group_by(name) %&gt;% filter(grepl(pattern = &quot;^Bar|bar...$|bar$|^Dam|dam...$|dam$|^Lory|lory...$|lory$&quot;, name))
-Names</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5jb2wiOjIsIm5yb3ciOjIzfSwicmRmIjoiVWtSWU1ncFlDZ0FBQUFJQUF3UUJBQUlEQUFBQUJBSUFBQUFCQUFRQUNRQUFBQUY0QUFBREV3QUFBQUlBQUFBUUFBQUFGd0FFQUFrQUFBQUVRV1JoYlFBRUFBa0FBQUFJUW1GeVlXSmlZWE1BQkFBSkFBQUFDRUpoY21GamFHVnNBQVFBQ1FBQUFBbENZWEpoWTJocFlYTUFCQUFKQUFBQUJVSmhjbUZyQUFRQUNRQUFBQWhDWVhKcVpYTjFjd0FFQUFrQUFBQUhRbUZ5YW05dVlRQUVBQWtBQUFBSVFtRnlibUZpWVhNQUJBQUpBQUFBQ0VKaGNuTmhZbUZ6QUFRQUNRQUFBQXRDWVhKMGFHOXNiMjFsZHdBRUFBa0FBQUFKUW1GeWRHbHRaWFZ6QUFRQUNRQUFBQVpDWVhKMVkyZ0FCQUFKQUFBQUNVSmhjbnBwYkd4aGFRQUVBQWtBQUFBR1EyaGxZbUZ5QUFRQUNRQUFBQWRFWVcxaGNtbHpBQVFBQ1FBQUFBaEVZVzFoYzJOMWN3QUVBQWtBQUFBSFJXeHRiMlJoYlFBRUFBa0FBQUFNUlhCb1pYTXRaR0Z0YldsdEFBUUFDUUFBQUFkSFlYcGhZbUZ5QUFRQUNRQUFBQVpIYVdKaVlYSUFCQUFKQUFBQURVdGhaR1Z6YUMxaVlYSnVaV0VBQkFBSkFBQUFCbEJoY21KaGNnQUVBQWtBQUFBSlVHRnpaR0Z0YldsdUFBQUFFQUFBQUJjQUJBQUpBQUFBQzJWaGNuUm9lVHNnY21Wa0FBUUFDUUFBQUF4emIyNGdiMllnYzJoaGJXVUFCQUFKQUFBQUZIUm9ZWFFnWW05M2N5QmlaV1p2Y21VZ1IyOWtBQVFBQ1FBQUFCQnpZVzFsSUdGeklFSmhjbUZqYUdWc0FBUUFDUUFBQUFkMGFIVnVaR1Z5QUFRQUNRQUFBQlp6YjI0Z2IyWWdTbVZ6ZFhNZ2IzSWdTbTl6YUhWaEFBUUFDUUFBQUJoemIyNGdiMllnWVNCS2IyNWhPeUJ2WmlCaElHUnZkbVVBQkFBSkFBQUFFbk52YmlCdlppQjBhR1VnY0hKdmNHaGxkQUFFQUFrQUFBQWFjMjl1SUc5bUlISmxkSFZ5YmpzZ2MyOXVJRzltSUhKbGMzUUFCQUFKQUFBQUhtRWdjMjl1SUhSb1lYUWdjM1Z6Y0dWdVpITWdkR2hsSUhkaGRHVnljd0FFQUFrQUFBQVVjMjl1SUc5bUlIUm9aU0JvYjI1dmNtRmliR1VBQkFBSkFBQUFEbmRvYnlCcGN5QmliR1Z6YzJWa0FBUUFDUUFBQUIxemIyNGdiMllnWTI5dWRHVnRjSFE3SUcxaFpHVWdiMllnYVhKdmJnQUVBQWtBQUFBUlptOXlZMlVnYjNJZ2MzUnlaVzVuZEdnQUJBQUpBQUFBRG1FZ2JHbDBkR3hsSUhkdmJXRnVBQVFBQ1FBQUFDOWhJSE5oWTJzZ1puVnNiQ0J2WmlCaWJHOXZaRHNnZEdobElITnBiV2xzYVhSMVpHVWdiMllnWW5WeWJtbHVad0FFQUFrQUFBQVNkR2hsSUVkdlpDQnZaaUJ0WldGemRYSmxBQVFBQ1FBQUFCRmxabVoxYzJsdmJpQnZaaUJpYkc5dlpBQUVBQWtBQUFBTFlTQjBjbVZoYzNWeVpYSUFCQUFKQUFBQUJuTjBjbTl1WndBRUFBa0FBQUFkYUc5c2FXNWxjM01nYjJZZ1lXNGdhVzVqYjI1emRHRnVkQ0J6YjI0QUJBQUpBQUFBQ0dFZ2MzVmlkWEppQUFRQUNRQUFBQjl3YjNKMGFXOXVJRzl5SUdScGJXbHVhWE5vYVc1bklHOW1JR0pzYjI5a0FBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUNtUmhkR0V1Wm5KaGJXVUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFLQUFBQUEvLy8vNlFBQUJBSUFBQUFCQUFRQUNRQUFBQWh3Y205aWJHVnRjd0FBQXhNQUFBQUZBQUFBRFFBQUFBRUFBQU5wQUFBQUVBQUFBQUVBQUFBSi8vLy8vd0FBQUJBQUFBQUJBQVFBQ1FBQUFBa3lJR052YkhWdGJuTUFBQUFRQUFBQUFRQUVBQWtBQUFBSk15QmpiMngxYlc1ekFBQUFFQUFBQUFFQUJBQUpBQUFBSXlkb2RIUndPaTh2ZEdsdWVTNWpZeTlrWTJZdlFtbGliR1ZPWVcxbGN5NWpjM1luQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFVQUJBQUpBQUFBQTNKdmR3QUVBQWtBQUFBRFkyOXNBQVFBQ1FBQUFBaGxlSEJsWTNSbFpBQUVBQWtBQUFBR1lXTjBkV0ZzQUFRQUNRQUFBQVJtYVd4bEFBQUVBZ0FBQS84QUFBQU5BQUFBQW9BQUFBRC8vLy8vQUFBRUFnQUFBdjhBQUFBUUFBQUFBd0FFQUFrQUFBQUdkR0pzWDJSbUFBUUFDUUFBQUFOMFltd0FCQUFKQUFBQUNtUmhkR0V1Wm5KaGJXVUFBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCSE53WldNQUFBTVRBQUFBQXdBQUFoTUFBQUFDQUFBREV3QUFBQUFBQUFRQ0FBQUMvd0FBQUJBQUFBQUNBQVFBQ1FBQUFCTmpiMnhzWldOMGIzSmZZMmhoY21GamRHVnlBQVFBQ1FBQUFBbGpiMnhzWldOMGIzSUFBQUQrQUFBREV3QUFBQUFBQUFRQ0FBQUMvd0FBQUJBQUFBQUNBQVFBQ1FBQUFCTmpiMnhzWldOMGIzSmZZMmhoY21GamRHVnlBQVFBQ1FBQUFBbGpiMnhzWldOMGIzSUFBQUQrQUFBRUFnQUFCZjhBQUFBUUFBQUFBZ0FFQUFrQUFBQUVibUZ0WlFBRUFBa0FBQUFIYldWaGJtbHVad0FBQVA0QUFBTVRBQUFBQUFBQUJBSUFBQUwvQUFBQUVBQUFBQUlBQkFBSkFBQUFEMk52Ykd4bFkzUnZjbDluZFdWemN3QUVBQWtBQUFBSlkyOXNiR1ZqZEc5eUFBQUEvZ0FBQUE0QUFBQUJQL0FBQUFBQUFBQUFBQVFDQUFBRi93QUFBQkFBQUFBREFBUUFDUUFBQUFSamIyeHpBQVFBQ1FBQUFBZGtaV1poZFd4MEFBUUFDUUFBQUFSemEybHdBQUFFQWdBQUF2OEFBQUFRQUFBQUFRQUVBQWtBQUFBSVkyOXNYM053WldNQUFBRCtBQUFFQWdBQUJmOEFBQUFRQUFBQUFnQUVBQWtBQUFBRWJtRnRaUUFFQUFrQUFBQUhiV1ZoYm1sdVp3QUFBUDRBQUFRQ0FBQUFBUUFFQUFrQUFBQUhiM0IwYVc5dWN3QUFBaE1BQUFBRkFBQUFFQUFBQUFFQUJBQUpBQUFBQVhJQUFBQVFBQUFBQVFBRUFBa0FBQUFQZFc1dVlXMWxaQzFqYUhWdWF5MDJBQUFBQ2dBQUFBRUFBQUFBQUFBQURRQUFBQUVBQUFBWEFBQUFEUUFBQUFFQUFBQUNBQUFFQWdBQUJmOEFBQUFRQUFBQUJRQUVBQWtBQUFBR1pXNW5hVzVsQUFRQUNRQUFBQVZzWVdKbGJBQUVBQWtBQUFBT2NtOTNibUZ0WlhNdWNISnBiblFBQkFBSkFBQUFDbkp2ZDNNdWRHOTBZV3dBQkFBSkFBQUFDbU52YkhNdWRHOTBZV3dBQUFEK0FBQUEvZz09In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["meaning"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Adam","2":"earthy; red"},{"1":"Barabbas","2":"son of shame"},{"1":"Barachel","2":"that bows before God"},{"1":"Barachias","2":"same as Barachel"},{"1":"Barak","2":"thunder"},{"1":"Barjesus","2":"son of Jesus or Joshua"},{"1":"Barjona","2":"son of a Jona; of a dove"},{"1":"Barnabas","2":"son of the prophet"},{"1":"Barsabas","2":"son of return; son of rest"},{"1":"Bartholomew","2":"a son that suspends the waters"},{"1":"Bartimeus","2":"son of the honorable"},{"1":"Baruch","2":"who is blessed"},{"1":"Barzillai","2":"son of contempt; made of iron"},{"1":"Chebar","2":"force or strength"},{"1":"Damaris","2":"a little woman"},{"1":"Damascus","2":"a sack full of blood; the similitude of burning"},{"1":"Elmodam","2":"the God of measure"},{"1":"Ephes-dammim","2":"effusion of blood"},{"1":"Gazabar","2":"a treasurer"},{"1":"Gibbar","2":"strong"},{"1":"Kadesh-barnea","2":"holiness of an inconstant son"},{"1":"Parbar","2":"a suburb"},{"1":"Pasdammin","2":"portion or diminishing of blood"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[23]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>2</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuRW5kTmFtZXMgPC0gQmlibGVOYW1lcyAlPiUgZ3JvdXBfYnkobmFtZSkgJT4lIFxuICBmaWx0ZXIoZ3JlcGwocGF0dGVybiA9IFwiYmFyJHxkYW0kfGxvcnkkXCIsIG5hbWUpKVxuRW5kTmFtZXNcbmBgYCJ9 -->
-<pre class="r"><code>EndNames &lt;- BibleNames %&gt;% group_by(name) %&gt;% 
-  filter(grepl(pattern = &quot;bar$|dam$|lory$&quot;, name))
-EndNames</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5jb2wiOjIsIm5yb3ciOjZ9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQUFRQUFBQUJnQUVBQWtBQUFBRVFXUmhiUUFFQUFrQUFBQUdRMmhsWW1GeUFBUUFDUUFBQUFkRmJHMXZaR0Z0QUFRQUNRQUFBQWRIWVhwaFltRnlBQVFBQ1FBQUFBWkhhV0ppWVhJQUJBQUpBQUFBQmxCaGNtSmhjZ0FBQUJBQUFBQUdBQVFBQ1FBQUFBdGxZWEowYUhrN0lISmxaQUFFQUFrQUFBQVJabTl5WTJVZ2IzSWdjM1J5Wlc1bmRHZ0FCQUFKQUFBQUVuUm9aU0JIYjJRZ2IyWWdiV1ZoYzNWeVpRQUVBQWtBQUFBTFlTQjBjbVZoYzNWeVpYSUFCQUFKQUFBQUJuTjBjbTl1WndBRUFBa0FBQUFJWVNCemRXSjFjbUlBQUFRQ0FBQUFBUUFFQUFrQUFBQUZZMnhoYzNNQUFBQVFBQUFBQVFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUJBSUFBQUFCQUFRQUNRQUFBQWx5YjNjdWJtRnRaWE1BQUFBTkFBQUFBb0FBQUFELy8vLzZBQUFFQWdBQUFBRUFCQUFKQUFBQUNIQnliMkpzWlcxekFBQURFd0FBQUFVQUFBQU5BQUFBQVFBQUEya0FBQUFRQUFBQUFRQUFBQW4vLy8vL0FBQUFFQUFBQUFFQUJBQUpBQUFBQ1RJZ1kyOXNkVzF1Y3dBQUFCQUFBQUFCQUFRQUNRQUFBQWt6SUdOdmJIVnRibk1BQUFBUUFBQUFBUUFFQUFrQUFBQWpKMmgwZEhBNkx5OTBhVzU1TG1OakwyUmpaaTlDYVdKc1pVNWhiV1Z6TG1OemRpY0FBQVFDQUFBQUFRQUVBQWtBQUFBRmJtRnRaWE1BQUFBUUFBQUFCUUFFQUFrQUFBQURjbTkzQUFRQUNRQUFBQU5qYjJ3QUJBQUpBQUFBQ0dWNGNHVmpkR1ZrQUFRQUNRQUFBQVpoWTNSMVlXd0FCQUFKQUFBQUJHWnBiR1VBQUFRQ0FBQUQvd0FBQUEwQUFBQUNnQUFBQVAvLy8vOEFBQVFDQUFBQy93QUFBQkFBQUFBREFBUUFDUUFBQUFaMFlteGZaR1lBQkFBSkFBQUFBM1JpYkFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBRWMzQmxZd0FBQXhNQUFBQURBQUFDRXdBQUFBSUFBQU1UQUFBQUFBQUFCQUlBQUFML0FBQUFFQUFBQUFJQUJBQUpBQUFBRTJOdmJHeGxZM1J2Y2w5amFHRnlZV04wWlhJQUJBQUpBQUFBQ1dOdmJHeGxZM1J2Y2dBQUFQNEFBQU1UQUFBQUFBQUFCQUlBQUFML0FBQUFFQUFBQUFJQUJBQUpBQUFBRTJOdmJHeGxZM1J2Y2w5amFHRnlZV04wWlhJQUJBQUpBQUFBQ1dOdmJHeGxZM1J2Y2dBQUFQNEFBQVFDQUFBRi93QUFBQkFBQUFBQ0FBUUFDUUFBQUFSdVlXMWxBQVFBQ1FBQUFBZHRaV0Z1YVc1bkFBQUEvZ0FBQXhNQUFBQUFBQUFFQWdBQUF2OEFBQUFRQUFBQUFnQUVBQWtBQUFBUFkyOXNiR1ZqZEc5eVgyZDFaWE56QUFRQUNRQUFBQWxqYjJ4c1pXTjBiM0lBQUFEK0FBQUFEZ0FBQUFFLzhBQUFBQUFBQUFBQUJBSUFBQVgvQUFBQUVBQUFBQU1BQkFBSkFBQUFCR052YkhNQUJBQUpBQUFBQjJSbFptRjFiSFFBQkFBSkFBQUFCSE5yYVhBQUFBUUNBQUFDL3dBQUFCQUFBQUFCQUFRQUNRQUFBQWhqYjJ4ZmMzQmxZd0FBQVA0QUFBUUNBQUFGL3dBQUFCQUFBQUFDQUFRQUNRQUFBQVJ1WVcxbEFBUUFDUUFBQUFkdFpXRnVhVzVuQUFBQS9nQUFCQUlBQUFBQkFBUUFDUUFBQUFkdmNIUnBiMjV6QUFBQ0V3QUFBQVVBQUFBUUFBQUFBUUFFQUFrQUFBQUJjZ0FBQUJBQUFBQUJBQVFBQ1FBQUFBOTFibTVoYldWa0xXTm9kVzVyTFRjQUFBQUtBQUFBQVFBQUFBQUFBQUFOQUFBQUFRQUFBQVlBQUFBTkFBQUFBUUFBQUFJQUFBUUNBQUFGL3dBQUFCQUFBQUFGQUFRQUNRQUFBQVpsYm1kcGJtVUFCQUFKQUFBQUJXeGhZbVZzQUFRQUNRQUFBQTV5YjNkdVlXMWxjeTV3Y21sdWRBQUVBQWtBQUFBS2NtOTNjeTUwYjNSaGJBQUVBQWtBQUFBS1kyOXNjeTUwYjNSaGJBQUFBUDRBQUFEKyJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["meaning"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Adam","2":"earthy; red"},{"1":"Chebar","2":"force or strength"},{"1":"Elmodam","2":"the God of measure"},{"1":"Gazabar","2":"a treasurer"},{"1":"Gibbar","2":"strong"},{"1":"Parbar","2":"a suburb"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="problem-17.7" class="section level3">
-<h3>Problem 17.7</h3>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmFieUJpYmxlTmFtZXMgPC0gQmlibGVOYW1lcyAlPiUgbGVmdF9qb2luKEJhYnlOYW1lcywgYnkgPSBjKFwibmFtZVwiID0gXCJuYW1lXCIpKSAlPiVcbiAgZ3JvdXBfYnkobmFtZSkgJT4lIHN1bW1hcmlzZSh0b3RhbD0gc3VtKGNvdW50KSkgJT4lIGZpbHRlcihyYW5rKGRlc2ModG90YWwpKSA8PSAxMClcbkJhYnlCaWJsZU5hbWVzXG5gYGAifQ== -->
-<pre class="r"><code>BabyBibleNames &lt;- BibleNames %&gt;% left_join(BabyNames, by = c(&quot;name&quot; = &quot;name&quot;)) %&gt;%
-  group_by(name) %&gt;% summarise(total= sum(count)) %&gt;% filter(rank(desc(total)) &lt;= 10)
-BabyBibleNames</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTB9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQUFRQUFBQUNnQUVBQWtBQUFBR1FXNWtjbVYzQUFRQUNRQUFBQVpFWVc1cFpXd0FCQUFKQUFBQUJVUmhkbWxrQUFRQUNRQUFBQVZLWVcxbGN3QUVBQWtBQUFBRVNtOW9iZ0FFQUFrQUFBQUdTbTl6WlhCb0FBUUFDUUFBQUFSTllYSnJBQVFBQ1FBQUFBUk5ZWEo1QUFRQUNRQUFBQVJRWVhWc0FBUUFDUUFBQUFaVWFHOXRZWE1BQUFBTkFBQUFDZ0FURU40QUhHeExBRGFZMUFCT0NkVUFUY0NtQUNjd3V3QVVpZWdBUHZ0L0FCVWhad0FpMnlJQUFBUUNBQUFBQVFBRUFBa0FBQUFKY205M0xtNWhiV1Z6QUFBQURRQUFBQUtBQUFBQS8vLy85Z0FBQkFJQUFBQUJBQVFBQ1FBQUFBVmpiR0Z6Y3dBQUFCQUFBQUFCQUFRQUNRQUFBQXBrWVhSaExtWnlZVzFsQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFJQUJBQUpBQUFBQkc1aGJXVUFCQUFKQUFBQUJYUnZkR0ZzQUFBQS9nQUFCQUlBQUFBQkFBUUFDUUFBQUFkdmNIUnBiMjV6QUFBQ0V3QUFBQVVBQUFBUUFBQUFBUUFFQUFrQUFBQUJjZ0FBQUJBQUFBQUJBQVFBQ1FBQUFCQjFibTVoYldWa0xXTm9kVzVyTFRFekFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFLQUFBQURRQUFBQUVBQUFBQ0FBQUVBZ0FBQlA4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Andrew","2":"1249502"},{"1":"Daniel","2":"1862731"},{"1":"David","2":"3578068"},{"1":"James","2":"5114325"},{"1":"John","2":"5095590"},{"1":"Joseph","2":"2568379"},{"1":"Mark","2":"1346024"},{"1":"Mary","2":"4127615"},{"1":"Paul","2":"1384807"},{"1":"Thomas","2":"2284322"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
+<div id="problem-18.2" class="section level3">
+<h3>Problem 18.2</h3>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDE3IgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKREMgQ2ggMTcgRXhlcmNpc2VzOiAxNy4xLCAxNy4zLCAxNy40LCAxNy41LCAxNy43CgojIyBGcm9udCBNYXR0ZXIKCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHRpZHlyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQoKYGBgCgoKCiMjIENoYXB0ZXIgMTcgRXhlcmNpc2VzCgoKIyMjIFByb2JsZW0gMTcuMQp0aGUgMTAgbW9zdCBwb3B1bGFyIG5hbWVzIGFjY29yZGluZyB0byBlYWNoIG9mIHRoZXNlIGNyaXRlcmlhOgpCb3lz4oCZIG5hbWVzIGVuZGluZyBpbiBhIHZvd2VsCgpgYGB7cn0KcmVnZXggPC0gIiAuKihbYWVpb3VdKSQiCkJveV9uYW1lcyA8LSBCYWJ5TmFtZXMgJT4lIGdyb3VwX2J5KG5hbWUpICU+JSBmaWx0ZXIoZ3JlcGwocGF0dGVybiA9IHJlZ2V4LG5hbWUpLCBzZXggPT0gIk0iKSAlPiUKICBzdW1tYXJpc2UocyA9IHN1bShjb3VudCkpICU+JSBmaWx0ZXIocmFuayhkZXNjKHMpKSA8PSAxMCkKQm95X25hbWVzCgpgYGAKTmFtZXMgd2l0aCBhIHNwYWNlIChsaWtlIExlZSBBbm4pCmBgYHtyfQpCYWJ5TmFtZXMgJT4lCiAgZ3JvdXBfYnkoc2V4LG5hbWUpJT4lCiAgZmlsdGVyKGdyZXAoIlxccyIsIG5hbWUpKSU+JQogIHN1bW1hcmlzZSh0b3RhbD1zdW0oY291bnQpKSU+JQogIGFycmFuZ2UoZGVzYyh0b3RhbCkpJT4lCiAgaGVhZCgxMCkKCmBgYApOYW1lcyBlbmRpbmcgd2l0aCDigJxqb2XigJ0gKGxpa2UgQmV0dHlKb2UpCmBgYHtyfQpCYWJ5TmFtZXMlPiUKICBmaWx0ZXIoZ3JlcGwoIkpvZXxqb2UkIiwgbmFtZSkpICU+JQogIGdyb3VwX2J5KG5hbWUpICU+JQogIHN1bW1hcmlzZSh0b3RhbCA9IHN1bShjb3VudCkpICU+JQogIGFycmFuZ2UoZGVzYyh0b3RhbCkpCgpgYGAKCiMjIyBQcm9ibGVtIDE3LjMKVGhlIHN0cmluZyB3b3VsZCByZXByZXNlbnRzIGEgcGhvbmUgbnVtYmVyLiBUaGUgZGlnaXRzIG9mIHRoYXQgcGhvbmUgbnVtYmVyIGFyZSBiZWluZyBleHRyYWN0ZWQKCgojIyMgUHJvYmxlbSAxNy40CjEgVGhlIHN0cmluZ3Mgd291bGQgYmUgMiBjaGFyYWN0ZXJzIGxvbmcuCgoyIEl0IHdvdWxkIGJlIHRoZSBzYW1lIGFtb3VudCBhcyB0aGVyZSBhcmUgVVMgc3RhdGVzIGFuZCB0ZXJyaXRvcmllcy4KCjMgVGhvc2UgYXJlIFUuUy4gc3RhdGVzIGFiYnJldmlhdGlvbnMuCgojIyMgUHJvYmxlbSAxNy41CmBgYHtyfQpCaWJsZU5hbWVzIDwtIAogIHJlYWRyOjpyZWFkX2NzdigiaHR0cDovL3RpbnkuY2MvZGNmL0JpYmxlTmFtZXMuY3N2IikKYGBgCjEKYGBge3J9Ck5hbWVzIDwtIEJpYmxlTmFtZXMgJT4lIGdyb3VwX2J5KG5hbWUpICU+JSBmaWx0ZXIoZ3JlcGwocGF0dGVybiA9ICJeQmFyfGJhci4uLiR8YmFyJHxeRGFtfGRhbS4uLiR8ZGFtJHxeTG9yeXxsb3J5Li4uJHxsb3J5JCIsIG5hbWUpKQpOYW1lcwpgYGAKMgpgYGB7cn0KRW5kTmFtZXMgPC0gQmlibGVOYW1lcyAlPiUgZ3JvdXBfYnkobmFtZSkgJT4lIAogIGZpbHRlcihncmVwbChwYXR0ZXJuID0gImJhciR8ZGFtJHxsb3J5JCIsIG5hbWUpKQpFbmROYW1lcwpgYGAKCiMjIyBQcm9ibGVtIDE3LjcKYGBge3J9CkJhYnlCaWJsZU5hbWVzIDwtIEJpYmxlTmFtZXMgJT4lIGxlZnRfam9pbihCYWJ5TmFtZXMsIGJ5ID0gYygibmFtZSIgPSAibmFtZSIpKSAlPiUKICBncm91cF9ieShuYW1lKSAlPiUgc3VtbWFyaXNlKHRvdGFsPSBzdW0oY291bnQpKSAlPiUgZmlsdGVyKHJhbmsoZGVzYyh0b3RhbCkpIDw9IDEwKQpCYWJ5QmlibGVOYW1lcwpgYGAKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU1RBVCAxODQgSG9tZXdvcmsgRXhlcmNpc2VzIiAKc3VidGl0bGU6ICJEYXRhQ29tcHV0aW5nIENoYXB0ZXJzIDE4IgphdXRob3I6ICJKYXNvbiBBYnUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEFzc2lnbmVkIEV4ZXJjaXNlcwoKREMgQ2ggMTcgRXhlcmNpc2VzOiAxOC4xLCAxOC4yCgojIyBGcm9udCBNYXR0ZXIKCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHRpZHlyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQoKYGBgCgoKCiMjIENoYXB0ZXIgMTggRXhlcmNpc2VzCgoKIyMjIFByb2JsZW0gMTguMQoKCiMjIyBQcm9ibGVtIDE4LjIKCgoKCgoKCg==</div>
 
 
 
