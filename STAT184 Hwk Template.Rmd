@@ -23,7 +23,7 @@ library(tidyr)
 library(lubridate)
 library(ggplot2)
 library(dplyr)
-library(party::ctree)
+install.packages("party")
 
 ```
 
