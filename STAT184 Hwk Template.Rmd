@@ -97,9 +97,9 @@ Case2 %>%
 
 ```
 
-3. At n = 343 the probability of getting diabetes is at 0.303
+3. At n = 343 (farthest right) the probability of getting diabetes is at 0.303
 
 
-4. At n  = 2050 the probability of getting diabetes is 0.001
+4. At n  = 2050 (farthest left) the probability of getting diabetes is 0.001
 
 
