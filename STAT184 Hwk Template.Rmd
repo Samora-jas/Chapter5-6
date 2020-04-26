@@ -72,11 +72,31 @@ CompleteCases %>%
   summarise(log_likelihood = sum(log(likelihood)))
 ```
 
-1.
 
-2.
+```{r}
+Case2 <-
+  NCHS %>%
+  select(diabetic, weight, age, bmi, chol, smoker, ptfat, tfat, lfat) %>%
+  na.omit()
+Case2 %>% nrow()
+mod2 <- party::ctree(diabetic ~ ptfat + tfat, data = Case2)
 
-3.
+```
 
-4.
+```{r}
+mod2 <- party::ctree(diabetic ~ ptfat + tfat, data = Case2)
+plot(mod2, type = "simple")
+```
+
+
+```{r}
+Case2 %>%
+  mutate(probability = as.numeric(predict(mod2)),
+         likelihood = ifelse(diabetic, probability, 1-probability)) %>%
+  summarise(log_likelihood = sum(log(likelihood)))
+
+```
+
+
+
 
