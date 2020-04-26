@@ -33,13 +33,13 @@ library(party::ctree)
 
 
 ### Problem 18.1
-1.
+1. The variables are living_area, bathrooms, bedrooms, fireplaces.
 
-2.
+2. For houses less than 1080 square feet the number of bathrooms do not make a difference because they are noot bathrooms less than 1080.
 
-3.
+3. Difference is typically $28,372.15
 
-4.
+4. Having a fireplace is indeed associated with a higher house price, this is also dependent on the living area as well.
 
 ### Problem 18.2
 ```{r}
